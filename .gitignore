@@ -1,0 +1,8 @@
+# raw source responses are re-downloaded by scripts/fetch.py (large, and refresh every run)
+data/raw/
+__pycache__/
+*.pyc
+.DS_Store
+
+# private, never commit
+data/forbidden_private.txt

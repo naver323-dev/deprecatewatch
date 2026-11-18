@@ -1,0 +1,8 @@
+{
+  "site_name": "DeprecateWatch",
+  "base_url": "https://deprecatewatch.pages.dev",
+  "ga_id": "G-SYFR20K6B2",
+  "tagline": "End-of-life and deprecation dates for SDKs, cloud runtimes and open-source projects",
+  "contact": "hello@deprecatewatch.pages.dev",
+  "attribution": "EOL and support dates are sourced from the endoflife.date API (MIT, endoflife.date contributors) and from vendor documentation and release feeds listed in each row."
+}

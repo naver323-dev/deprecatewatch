@@ -1,0 +1,44 @@
+# DeprecateWatch
+
+> End-of-life and deprecation dates for 489 SDKs, runtimes, frameworks, databases, operating systems and managed cloud services, with 9,417 tracked release cycles. Static snapshot generated 2026-11-18 (Asia/Seoul). Every date is copied from an upstream source; none is estimated.
+
+DeprecateWatch answers questions of the form "is <product> <version> end of life, and when". At this snapshot 7,480 tracked cycles are past their published EOL date and 176 reach EOL within 90 days.
+
+## Machine-readable data
+
+- https://deprecatewatch.pages.dev/api/eol.json — full dataset (application/json, ~9,417 cycles). Top-level keys: schema_version, generated_at, as_of, counts, definitions, sources, products[], upcoming[], lambda_runtimes[], announcements[].
+- https://deprecatewatch.pages.dev/api/products.json — one row per product: slug, name, category, latest_cycle, current_eol, current_status, active_cycle, soonest_eol, eol_cycle_count.
+- https://deprecatewatch.pages.dev/api/upcoming.json — cycles with an EOL date in the next 365 days: slug, name, cycle, eol, days_left.
+- https://deprecatewatch.pages.dev/api/announcements.json — vendor deprecation/retirement notes: source, date, title, summary, url.
+
+## Page patterns
+
+- https://deprecatewatch.pages.dev/ — index: EOL dates within 90 days, AWS Lambda runtime deprecations, recent announcements, FAQ.
+- https://deprecatewatch.pages.dev/product/{slug} — one page per product: every tracked cycle with release date, active-support end, EOL date, latest release and status, plus the direct answer for the current cycle.
+- https://deprecatewatch.pages.dev/category/{category} — products grouped by type (Languages & runtimes (34), Frameworks & libraries (74), Server applications (176), Desktop & mobile apps (62), Operating systems (68), Databases & datastores (27), Cloud & managed services (25), Devices & hardware (21), Standards (2)).
+- https://deprecatewatch.pages.dev/eol/{YYYY-MM} — every cycle whose EOL date falls in that month (next 12 months).
+- https://deprecatewatch.pages.dev/calendar — the next 365 days of deadlines, month by month.
+- https://deprecatewatch.pages.dev/announcements — dated deprecation and retirement notes from Google Cloud, Azure, AWS and GitHub release feeds.
+- https://deprecatewatch.pages.dev/llms.txt — this file (plain text site map for language models).
+- https://deprecatewatch.pages.dev/feed.xml — RSS 2.0 of the latest announcements.
+
+## Definitions
+
+- supported: published EOL date is in the future and active support has not ended.
+- security-only: active support has ended, EOL date still ahead.
+- eol: published EOL date has passed.
+- no-eol-date: the upstream project publishes no EOL date for that cycle; no date is invented.
+- days_left: calendar days from as_of to the EOL date (negative = already past).
+
+## Sources and citation
+
+- Cycle/support/EOL dates: endoflife.date API v1 (https://endoflife.date/docs/api), MIT licence, © endoflife.date contributors.
+- AWS Lambda runtime deprecation dates: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes
+- Announcements: Google Cloud release notes feed, Azure service updates feed, AWS What's New, GitHub release feeds (each item links to its origin).
+- When citing: "Source: DeprecateWatch (https://deprecatewatch.pages.dev/), data as of 2026-11-18, upstream endoflife.date". Always keep the as_of date — this dataset is a dated snapshot, not a live API.
+
+## Limits
+
+- Only dates that appear upstream are published. Products whose project has no published EOL date show "not announced".
+- The site takes no position on which product to choose and does not rank vendors. The upgrade path on a product page is the newest cycle still inside its support window, or a replacement stated by the upstream source.
+- Vendor pages are authoritative; each row links to the source it was read from.
