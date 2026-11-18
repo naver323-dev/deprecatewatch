@@ -5,7 +5,7 @@ frameworks, databases, operating systems, server applications and managed cloud 
 
 Live site: https://deprecatewatch.pages.dev
 
-The snapshot in this repository holds 489 products and 9,417 release cycles. Every date is copied from an
+The snapshot in this repository holds 489 products and 9,418 release cycles. Every date is copied from an
 upstream source — nothing is estimated, interpolated or hand-edited. `data/eol_normalized.json` carries the
 snapshot date (`as_of`), and every page repeats it.
 
@@ -52,15 +52,22 @@ Each product page and announcement links back to the source it was read from.
 |---|---|
 | `supported` | published EOL date is in the future and active support has not ended |
 | `security-only` | active support has ended, EOL date still ahead |
-| `eol` | published EOL date has passed |
-| `no-eol-date` | the upstream project publishes no EOL date for that cycle — no date is invented |
+| `eol` | end of life: the published EOL date has passed, **or** the upstream marks the cycle end of life without a date |
+| `eol` + `eol_date_published: false` (`eol-no-date`) | marked end of life, but the upstream publishes no date for it — shown as “End of life (date not published)”, counted in `counts.eol_without_date` |
+| `no-eol-date` | the upstream publishes no EOL date and does not mark the cycle end of life — no date is invented |
 
 Status is computed from the snapshot date only, so the same build always yields the same statuses.
+`counts.eol_cycles` is the total of `eol_with_date` + `eol_without_date`; quote the split, not the total alone,
+when saying how many cycles are past their EOL date.
 
 ## Automation
 
 `.github/workflows/update.yml` runs weekly, Mondays 21:00 UTC (Tuesdays 06:00 Asia/Seoul): fetch → normalize → build → check,
 then commits the refreshed snapshot. Cloudflare Pages deploys the `site/` directory from `main`.
+
+`sitemap.xml` `lastmod` and JSON-LD `dateModified` are **not** the build date: `data/site_state.json` keeps a
+fingerprint of the data each page renders, and a page's date only moves when that fingerprint changes. The state
+file is committed with the snapshot so the dates survive between weekly runs.
 
 ## Editing
 

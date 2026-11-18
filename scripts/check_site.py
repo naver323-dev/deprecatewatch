@@ -110,6 +110,21 @@ def check_data():
     ok(DOC["counts"]["cycles"] == total, "data: cycle count matches sum")
     ok(DOC["counts"]["products"] == len(DOC["products"]), "data: product count matches list")
     ok(DOC["counts"]["upcoming_eol_365d"] == len(DOC["upcoming"]), "data: upcoming count matches list")
+    # P0-1: eol 대표 숫자는 ‘종료일이 지난’ 것과 ‘종료일 미공개’로 나눠야 한다
+    eol_cycles = [c for p in DOC["products"] for c in p["cycles"] if c["eol_status"] == "eol"]
+    ok(DOC["counts"]["eol_cycles"] == len(eol_cycles), "data: eol_cycles matches list")
+    ok(DOC["counts"].get("eol_with_date") is not None and DOC["counts"].get("eol_without_date") is not None,
+       "data: counts.eol_with_date / eol_without_date present")
+    ok(DOC["counts"].get("eol_with_date", -1) + DOC["counts"].get("eol_without_date", -1) == len(eol_cycles),
+       "data: eol_with_date + eol_without_date == eol_cycles")
+    ok(DOC["counts"].get("eol_with_date") == sum(1 for c in eol_cycles if c.get("eol")),
+       "data: eol_with_date == cycles with a published date")
+    ok(DOC["counts"].get("eol_without_date") == sum(1 for c in eol_cycles if not c.get("eol")),
+       "data: eol_without_date == cycles without a published date")
+    ok(all(c.get("eol_date_published") == bool(c.get("eol")) for p in DOC["products"] for c in p["cycles"]),
+       "data: eol_date_published matches eol field")
+    ok("eol-no-date" in DOC["definitions"], "data: definitions has eol-no-date")
+    ok("eol" in DOC["definitions"] and "no-eol-date" in DOC["definitions"], "data: status definitions present")
     ok(all(0 <= u["days_left"] <= 365 for u in DOC["upcoming"]), "data: upcoming window is 0..365 days")
     for a in DOC["announcements"]:
         ok(re.fullmatch(r"\d{4}-\d{2}-\d{2}", a.get("date") or "") is not None, "data: announcement date ISO", a.get("title", "")[:40])
@@ -176,6 +191,20 @@ def check_product_pages():
                 ok(c["eol"] in body, f"product {p['slug']}: EOL {c['eol']} shown for cycle {c['cycle']}")
         if p["cycles"][0].get("eol"):
             ok(p["cycles"][0]["eol"] in body, f"product {p['slug']}: current EOL in direct answer")
+        # P0-1: eol인데 날짜가 없으면 ‘date not published’로 표기
+        undated_eol = [c for c in cycles if c["eol_status"] == "eol" and not c.get("eol")]
+        if undated_eol:
+            ok("date not published" in body, f"product {p['slug']}: eol without date labelled")
+        # P1-1: meta description은 마침표로 끝나는 문장이어야 한다(붙여 쓴 비문 금지)
+        raw = open(path, encoding="utf-8").read()
+        d = re.search(r'<meta name="description" content="([^"]*)"', raw)
+        if d:
+            desc = html.unescape(d.group(1)).strip()
+            ok(desc.endswith((".", "!", "?")), f"product {p['slug']}: description ends with punctuation", desc[-60:])
+            ok(") the " not in desc and ") the next" not in desc,
+               f"product {p['slug']}: no glued clause after parenthesis", desc[-80:])
+            ok("  " not in desc, f"product {p['slug']}: no double space in description")
+            ok(desc.count(".") >= 1, f"product {p['slug']}: description has sentences", desc[-60:])
 
 
 def check_jsonld():
@@ -253,9 +282,40 @@ def check_assets():
 
 def check_home_numbers():
     body = text_of(os.path.join(SITE, "index.html"))
-    for n in (len(DOC["products"]), DOC["counts"]["cycles"], DOC["counts"]["eol_cycles"],
+    for n in (len(DOC["products"]), DOC["counts"]["cycles"],
+              DOC["counts"].get("eol_with_date", DOC["counts"]["eol_cycles"]),
+              DOC["counts"].get("eol_without_date", 0),
               DOC["counts"]["upcoming_eol_365d"]):
         ok(f"{n:,}" in body or str(n) in body, f"home: shows {n:,}")
+    # 대표 숫자를 ‘모두 종료일이 지난 것’처럼 말하지 않는다(P0-1)
+    ok("past their published EOL date" in body, "home: dated EOL wording")
+    ok(f"{DOC['counts']['eol_cycles']:,}</strong><span>cycles past" not in body,
+       "home: no single EOL count labelled as past their date")
+
+
+def check_lastmod():
+    """P1-2: lastmod·dateModified는 빌드일 고정이 아니라 페이지별 실제 변경일이어야 한다."""
+    sm = open(os.path.join(SITE, "sitemap.xml"), encoding="utf-8").read()
+    lastmods = re.findall(r"<lastmod>([^<]+)</lastmod>", sm)
+    ok(len(lastmods) > 500, "sitemap: lastmod on every url", str(len(lastmods)))
+    ok(all(re.fullmatch(r"\d{4}-\d{2}-\d{2}", v or "") for v in lastmods), "sitemap: lastmod is an ISO date")
+    ok(all(v <= TODAY.isoformat() for v in lastmods), "sitemap: lastmod is never in the future")
+    ok(os.path.exists(os.path.join(ROOT, "data", "site_state.json")), "state: data/site_state.json written")
+    state = json.load(open(os.path.join(ROOT, "data", "site_state.json"), encoding="utf-8"))
+    ok(len(state.get("pages", {})) > 500, "state: page fingerprints recorded", str(len(state.get("pages", {}))))
+    probe = open(os.path.join(SITE, "product", "nodejs.html"), encoding="utf-8").read()
+    ok('"dateModified":"' + state["pages"]["/product/nodejs"]["lastmod"] in probe.replace(" ", ""),
+       "product nodejs: JSON-LD dateModified uses page lastmod")
+
+
+def check_api_metadata():
+    """P1-3: 모든 API에 출처·라이선스·인용 문구가 있다."""
+    for name in ("eol.json", "products.json", "upcoming.json", "announcements.json"):
+        doc = json.load(open(os.path.join(SITE, "api", name), encoding="utf-8"))
+        ok("MIT" in json.dumps(doc.get("license", "")), f"api {name}: license")
+        ok("DeprecateWatch" in doc.get("attribution", ""), f"api {name}: attribution")
+        ok(bool(doc.get("sources")), f"api {name}: sources")
+        ok(doc.get("as_of") == DOC["as_of"], f"api {name}: as_of")
 
 
 def check_ga():
@@ -278,6 +338,8 @@ def main():
     check_jsonld()
     check_assets()
     check_home_numbers()
+    check_lastmod()
+    check_api_metadata()
     check_ga()
     print(f"checks run: {checks}")
     if failures:

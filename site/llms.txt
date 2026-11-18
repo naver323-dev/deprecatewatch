@@ -2,7 +2,7 @@
 
 > End-of-life and deprecation dates for 489 SDKs, runtimes, frameworks, databases, operating systems and managed cloud services, with 9,418 tracked release cycles. Static snapshot generated 2026-11-18 (Asia/Seoul). Every date is copied from an upstream source; none is estimated.
 
-DeprecateWatch answers questions of the form "is <product> <version> end of life, and when". At this snapshot 7,481 tracked cycles are past their published EOL date and 176 reach EOL within 90 days.
+DeprecateWatch answers questions of the form "is <product> <version> end of life, and when". At this snapshot 6,928 tracked cycles are past their published EOL date, 553 more are marked end of life with no published date, and 176 reach EOL within 90 days.
 
 ## Machine-readable data
 
@@ -27,7 +27,8 @@ DeprecateWatch answers questions of the form "is <product> <version> end of life
 - supported: published EOL date is in the future and active support has not ended.
 - security-only: active support has ended, EOL date still ahead.
 - eol: published EOL date has passed.
-- no-eol-date: the upstream project publishes no EOL date for that cycle; no date is invented.
+- no-eol-date: the upstream publishes no EOL date and does not mark the cycle end of life (eol=false); no date is invented.
+- eol-no-date: the upstream marks the cycle end of life but publishes no EOL date (eol=true, eolFrom=null). Shown as ‘End of life (date not published)’; counted in counts.eol_without_date, not in counts.eol_with_date.
 - days_left: calendar days from as_of to the EOL date (negative = already past).
 
 ## Sources and citation

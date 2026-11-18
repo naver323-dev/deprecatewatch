@@ -6,6 +6,7 @@
 - 광고·추적은 GA4 하나뿐이며 privacy.html에 명시한다
 """
 import html
+import hashlib
 import json
 import os
 import re
@@ -85,6 +86,87 @@ def days_phrase(n):
 
 def badge(status):
     return f'<span class="badge b-{e(status)}">{e(STATUS_LABEL.get(status, status))}</span>'
+
+
+# ----------------------------------------------------- last modified (교차검수 P1-2)
+# 페이지 본문 전체 대신 그 페이지가 보여 주는 ‘데이터 지문’을 저장하고 비교한다.
+# 기준일(as_of)·생성시각처럼 매주 바뀌는 값은 지문에 넣지 않으므로, 재빌드만으로는
+# lastmod·dateModified가 갱신되지 않는다(주 1회 재빌드 때 전 페이지가 ‘변경’으로 보이던 문제).
+STATE_PATH = os.path.join(DATA, "site_state.json")
+try:
+    _STATE = json.load(open(STATE_PATH, encoding="utf-8"))
+except (OSError, ValueError):
+    _STATE = {}
+PAGE_STATE = _STATE.get("pages") if isinstance(_STATE.get("pages"), dict) else {}
+LAST_MOD = {}
+
+
+def mod_key(path):
+    key = re.sub(r"\.html$", "", path)
+    if key.endswith("/index"):
+        key = key[: -len("index")]
+    return key
+
+
+def note_mod(path, payload):
+    """이 페이지 내용의 마지막 변경일을 정한다(지문이 같으면 이전 날짜 유지)."""
+    key = mod_key(path)
+    digest = hashlib.sha256(
+        json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str).encode("utf-8")
+    ).hexdigest()
+    prev = PAGE_STATE.get(key) or {}
+    lastmod = prev["lastmod"] if prev.get("hash") == digest and prev.get("lastmod") else AS_OF
+    PAGE_STATE[key] = {"hash": digest, "lastmod": lastmod}
+    LAST_MOD[key] = lastmod
+    return lastmod
+
+
+def mod_of(path):
+    key = mod_key(path)
+    return LAST_MOD.get(key) or (PAGE_STATE.get(key) or {}).get("lastmod") or AS_OF
+
+
+def compute_mod_payloads():
+    """모든 페이지의 데이터 지문을 먼저 계산해 둔다(JSON-LD dateModified가 이를 쓴다)."""
+    products_sig = {
+        p["slug"]: [tuple(str(c.get(k) or "") for k in
+                          ("cycle", "release_date", "support_end", "eol", "eol_status", "latest", "lts"))
+                    for c in p["cycles"]] for p in PRODUCT_LIST
+    }
+    note_mod("/", {
+        "counts": DOC["counts"],
+        "products": {k: v[:3] for k, v in products_sig.items()},
+        "upcoming90": [(u["slug"], u["cycle"], u["eol"]) for u in UPCOMING_90],
+        "lambda": [(r["identifier"], r.get("deprecation_date"), r["status"]) for r in LAMBDA],
+        "ann": [(a["source"], a["date"], a["title"]) for a in ANNOUNCEMENTS[:10]],
+    })
+    note_mod("/categories.html", {
+        "products": {k: (p["name"], p["category"]) for k, p in
+                     ((x["slug"], x) for x in PRODUCT_LIST)},
+    })
+    note_mod("/calendar.html", {"upcoming": [(u["slug"], u["cycle"], u["eol"]) for u in UPCOMING]})
+    note_mod("/announcements.html", [(a["source"], a["date"], a["title"], a["url"]) for a in ANNOUNCEMENTS])
+    note_mod("/about.html", {"sources": DOC["sources"], "products": len(PRODUCT_LIST)})
+    note_mod("/privacy.html", {"page": "privacy"})
+    for p in PRODUCT_LIST:
+        note_mod(f"/product/{p['slug']}.html", {
+            "cycles": products_sig[p["slug"]],
+            "active_cycle": p.get("active_cycle"),
+            "name": p["name"],
+        })
+    for cat, items in BY_CAT.items():
+        note_mod(f"/category/{cat}.html", [(x["slug"], x["name"], x.get("soonest_eol")) for x in items])
+    for month, items in MONTH_INDEX.items():
+        note_mod(f"/eol/{month}.html",
+                 [(u["slug"], u["cycle"], u["eol"], "past" if u["eol"] <= AS_OF else "upcoming") for u in items])
+
+
+def save_mod_state():
+    os.makedirs(DATA, exist_ok=True)
+    with open(STATE_PATH, "w", encoding="utf-8") as f:
+        json.dump({"as_of": AS_OF, "pages": dict(sorted(PAGE_STATE.items()))}, f,
+                  ensure_ascii=False, indent=1, sort_keys=True)
+        f.write("\n")
 
 
 def rel(url):
@@ -199,6 +281,10 @@ def status_counts():
 
 
 COUNTS = status_counts()
+# eol 상태를 ‘종료일이 있는’ 것과 ‘원문에 종료일이 없는’ 것으로 나눈 수(교차검수 P0-1)
+EOL_WITH_DATE = sum(1 for p in PRODUCT_LIST for c in p["cycles"]
+                    if c["eol_status"] == "eol" and c.get("eol_date_published"))
+EOL_WITHOUT_DATE = COUNTS["eol"] - EOL_WITH_DATE
 UPCOMING = DOC["upcoming"]
 UPCOMING_90 = [u for u in UPCOMING if u["days_left"] <= 90]
 UPCOMING_30 = [u for u in UPCOMING if u["days_left"] <= 30]
@@ -211,6 +297,22 @@ for cat in BY_CAT:
     BY_CAT[cat].sort(key=lambda p: (p["soonest_eol"]["eol"] if p["soonest_eol"] else "9999-12-31", p["name"]))
 
 
+# /eol/{YYYY-MM} 페이지에 들어가는 행(지문 계산·페이지 생성 공용)
+def _month_rows():
+    months = {}
+    for u in UPCOMING:
+        months.setdefault(u["eol"][:7], []).append(u)
+    past = {}
+    for p in PRODUCT_LIST:
+        for c in p["cycles"]:
+            if c.get("eol") and c["eol_status"] == "eol" and c["eol"] >= (TODAY - timedelta(days=365)).isoformat():
+                past.setdefault(c["eol"][:7], []).append({"slug": p["slug"], "name": p["name"], "cycle": c["cycle"], "eol": c["eol"]})
+    return {m: months.get(m, []) + past.get(m, []) for m in set(list(months) + list(past))}
+
+
+MONTH_INDEX = _month_rows()
+
+
 def answer_product(p):
     """제품 페이지 첫 문단 — 데이터로만 만든 직접 답변."""
     cur = p["cycles"][0]
@@ -219,7 +321,8 @@ def answer_product(p):
     if cur.get("release_date"):
         bits.append(f"released {cur['release_date']}")
     if cur["eol_status"] == "eol":
-        bits.append(f"and it reached end of life on {cur['eol']}")
+        bits.append(f"and it reached end of life on {cur['eol']}" if cur.get("eol")
+                    else "and it is marked end of life with no published date")
     elif cur.get("eol"):
         bits.append(f"with end of life on {cur['eol']}")
     else:
@@ -228,15 +331,24 @@ def answer_product(p):
     if len(bits) > 3:
         sentence = f"{bits[0]}, {bits[1]} {bits[2]}, {bits[3]}."
         sentence = sentence.replace(", and ", ", and ")
+    # 아래 문장들은 각각 완결된 문장으로 만든다(붙여 쓰면 비문이 된다 — 교차검수 P1-1)
     rest = []
-    if p["eol_cycle_count"]:
-        old = [c for c in p["cycles"] if c["eol_status"] == "eol"]
-        rest.append(f"{p['eol_cycle_count']} of its {p['cycle_count']} tracked cycles have passed their EOL date (earliest tracked cycle {old[-1]['cycle']})")
+    dated = [c for c in p["cycles"] if c["eol_status"] == "eol" and c.get("eol_date_published")]
+    undated = [c for c in p["cycles"] if c["eol_status"] == "eol" and not c.get("eol_date_published")]
+    if dated:
+        rest.append(f"{len(dated)} of its {p['cycle_count']} tracked cycles have passed their published end-of-life date.")
+    if undated:
+        rest.append(f"{len(undated)} more are marked end of life by the upstream source with no published date.")
     if active:
-        rest.append(f"the newest cycle still supported is {active['cycle']}" + (f" (latest release {active['latest']})" if active.get("latest") and active["latest"] != active["cycle"] else "") + (f", supported until {active['eol']}" if active.get("eol") else ""))
+        rest.append(
+            f"The newest cycle still supported is {active['cycle']}"
+            + (f" (latest release {active['latest']})" if active.get("latest") and active["latest"] != active["cycle"] else "")
+            + (f", supported until {active['eol']}." if active.get("eol") else ", with no published end-of-life date.")
+        )
     if p.get("soonest_eol"):
         s = p["soonest_eol"]
-        rest.append(f"the next deadline is cycle {s['cycle']} on {s['eol']} ({days_phrase(s['days_left'])})")
+        when = days_phrase(s["days_left"])
+        rest.append(f"The next deadline is cycle {s['cycle']} on {s['eol']}" + (f" ({when})." if when else "."))
     return sentence, rest
 
 
@@ -244,12 +356,16 @@ def cycle_table(p, limit=None):
     rows = []
     cycles = p["cycles"] if not limit else p["cycles"][:limit]
     for c in cycles:
+        eol_cell = c.get("eol") or (
+            "not announced" if c["eol_status"] == "no-eol-date"
+            else "date not published" if c["eol_status"] == "eol"
+            else "—")
         rows.append(
             "<tr>"
             f"<td class=\"mono\">{e(c['cycle'])}</td>"
             f"<td>{e(c.get('release_date') or '—')}</td>"
             f"<td>{e(c.get('support_end') or '—')}</td>"
-            f"<td><strong>{e(c.get('eol') or ('not announced' if c['eol_status'] == 'no-eol-date' else '—'))}</strong>"
+            f"<td><strong>{e(eol_cell)}</strong>"
             + (f"<br><span class=\"small muted\">{e(days_phrase(c.get('days_left')))}</span>" if c.get("days_left") is not None else "")
             + "</td>"
             f"<td class=\"mono small\">{e(c.get('latest') or '—')}</td>"
@@ -273,9 +389,13 @@ def faq_home():
         ("Where do the dates come from?",
          "Cycle and support dates come from the endoflife.date API (MIT licensed). AWS Lambda runtime deprecation dates come from the AWS Lambda documentation table. Deprecation announcements come from the Google Cloud release notes feed, the Azure service updates feed, AWS What's New and GitHub release feeds. Every row links to the source it was read from, and no date is estimated or filled in by hand."),
         ("How many tracked versions are already end-of-life?",
-         f"As of {AS_OF}, {COUNTS['eol']:,} of {DOC['counts']['cycles']:,} tracked release cycles have passed their end-of-life date, {COUNTS['security-only']:,} are past active support but not yet at end of life, and {len(UPCOMING_90):,} reach end of life within the next 90 days."),
+         f"As of {AS_OF}, {EOL_WITH_DATE:,} of {DOC['counts']['cycles']:,} tracked release cycles have passed their published end-of-life date, "
+         f"and {EOL_WITHOUT_DATE:,} more are marked end of life by the upstream source with no published date. "
+         f"{COUNTS['security-only']:,} are past active support but not yet at end of life, and {len(UPCOMING_90):,} reach end of life within the next 90 days."),
         ("What does the Security-only status mean?",
-         "Security-only means the cycle is past the end of its active support window but its published end-of-life date has not arrived yet, so the upstream project no longer ships regular updates for it. End of life means the published EOL date has passed. No EOL date means the project has not published an end-of-life date for that cycle in the source data."),
+         "Security-only means the cycle is past the end of its active support window but its published end-of-life date has not arrived yet, so the upstream project no longer ships regular updates for it. "
+         "End of life means the published EOL date has passed; it also covers cycles the upstream marks end of life without a date, shown as ‘date not published’. "
+         "No EOL date means the project has not published an end-of-life date for that cycle and has not marked it end of life in the source data."),
         ("Does DeprecateWatch recommend which version to upgrade to?",
          "No. Each product page shows two facts only: the newest cycle that is still supported for that product, and any replacement the upstream source itself states (for example a recommended model or successor). We do not rank vendors, score alternatives or issue migration advice."),
         ("How fresh is the data and how is it updated?",
@@ -346,7 +466,8 @@ applications and managed cloud services. Every date is taken from an upstream so
 <div class="stats">
   <div><strong>{len(PRODUCT_LIST)}</strong><span>products tracked</span></div>
   <div><strong>{DOC['counts']['cycles']:,}</strong><span>release cycles</span></div>
-  <div><strong>{COUNTS['eol']:,}</strong><span>cycles past EOL</span></div>
+  <div><strong>{EOL_WITH_DATE:,}</strong><span>cycles past their published EOL date</span></div>
+  <div><strong>{EOL_WITHOUT_DATE:,}</strong><span>marked end of life, no published date</span></div>
   <div><strong>{len(UPCOMING)}</strong><span>EOL dates in the next 365 days</span></div>
   <div><strong>{len(UPCOMING_90)}</strong><span>EOL dates in the next 90 days</span></div>
 </div>
@@ -423,7 +544,7 @@ with a dated value instead of a training-cutoff guess:</p>
                 "license": "https://opensource.org/license/mit",
                 "creator": {"@id": rel("/#org")},
                 "isAccessibleForFree": True,
-                "dateModified": AS_OF,
+                "dateModified": mod_of("/"),
                 "temporalCoverage": f"1976-01-01/{AS_OF}",
                 "keywords": ["end of life", "EOL", "deprecation", "support lifecycle", "SDK", "runtime", "cloud"],
                 "variableMeasured": ["end-of-life date", "end of active support date", "latest release"],
@@ -440,7 +561,7 @@ with a dated value instead of a training-cutoff guess:</p>
                 "name": "DeprecateWatch — end-of-life dates for SDKs, cloud runtimes and open-source projects",
                 "isPartOf": {"@id": rel("/#website")},
                 "about": {"@id": rel("/#dataset")},
-                "dateModified": AS_OF,
+                "dateModified": mod_of("/"),
                 "inLanguage": "en",
             },
             jsonld_faq(faq, rel("/")),
@@ -511,7 +632,7 @@ def build_product(p):
                 "name": title,
                 "description": desc[:300],
                 "isPartOf": {"@id": rel("/#website")},
-                "dateModified": AS_OF,
+                "dateModified": mod_of(f"/product/{p['slug']}.html"),
                 "inLanguage": "en",
                 "about": {
                     "@type": "SoftwareApplication",
@@ -601,7 +722,7 @@ the next 90 days. Sorted by the soonest upcoming deadline. Data as of <time date
                 "url": rel(f"/category/{cat}.html"),
                 "name": f"{label} end-of-life dates",
                 "isPartOf": {"@id": rel("/#website")},
-                "dateModified": AS_OF,
+                "dateModified": mod_of(f"/category/{cat}.html"),
                 "inLanguage": "en",
                 "mainEntity": {
                     "@type": "ItemList",
@@ -677,7 +798,7 @@ The list below is the nearest {min(60, len(UPCOMING))}. Data as of <time datetim
         {"@context": "https://schema.org", "@graph": [jsonld_org(), {
             "@type": "WebPage", "@id": rel("/calendar.html#webpage"), "url": rel("/calendar.html"),
             "name": "End-of-life calendar", "isPartOf": {"@id": rel("/#website")},
-            "dateModified": AS_OF, "inLanguage": "en"}]}, nav_key="/calendar.html"))
+            "dateModified": mod_of("/calendar.html"), "inLanguage": "en"}]}, nav_key="/calendar.html"))
 
 
 def build_month(month, upcoming_rows, past_rows):
@@ -706,7 +827,7 @@ def build_month(month, upcoming_rows, past_rows):
         {"@context": "https://schema.org", "@graph": [jsonld_org(), {
             "@type": "WebPage", "@id": rel(f"/eol/{month}.html#webpage"), "url": rel(f"/eol/{month}.html"),
             "name": f"End-of-life dates in {month}", "isPartOf": {"@id": rel("/#website")},
-            "dateModified": AS_OF, "inLanguage": "en"}]}, nav_key="/calendar.html"))
+            "dateModified": mod_of(f"/eol/{month}.html"), "inLanguage": "en"}]}, nav_key="/calendar.html"))
 
 
 # ---------------------------------------------------------------- announcements
@@ -742,7 +863,7 @@ Snapshot <time datetime="{e(AS_OF)}">{e(AS_OF)}</time>. Summaries are the announ
         {"@context": "https://schema.org", "@graph": [jsonld_org(), {
             "@type": "WebPage", "@id": rel("/announcements.html#webpage"), "url": rel("/announcements.html"),
             "name": "Deprecation and retirement announcements", "isPartOf": {"@id": rel("/#website")},
-            "dateModified": AS_OF, "inLanguage": "en"}]}, nav_key="/announcements.html"))
+            "dateModified": mod_of("/announcements.html"), "inLanguage": "en"}]}, nav_key="/announcements.html"))
 
 
 # ---------------------------------------------------------------- about / privacy
@@ -798,7 +919,7 @@ Vendor documentation and release feeds remain the property of their vendors and 
                                {"@context": "https://schema.org", "@graph": [jsonld_org(), {
                                    "@type": "AboutPage", "@id": rel("/about.html#webpage"), "url": rel("/about.html"),
                                    "name": "Method and sources", "isPartOf": {"@id": rel("/#website")},
-                                   "dateModified": AS_OF}]}, nav_key="/about.html"))
+                                   "dateModified": mod_of("/about.html")}]}, nav_key="/about.html"))
 
 
 def build_privacy():
@@ -826,7 +947,7 @@ Links to vendor documentation and to endoflife.date leave this site and are gove
                                  "/privacy.html", body,
                                  {"@context": "https://schema.org", "@graph": [jsonld_org(), {
                                      "@type": "WebPage", "@id": rel("/privacy.html#webpage"), "url": rel("/privacy.html"),
-                                     "name": "Privacy", "isPartOf": {"@id": rel("/#website")}, "dateModified": AS_OF}]}))
+                                     "name": "Privacy", "isPartOf": {"@id": rel("/#website")}, "dateModified": mod_of("/privacy.html")}]}))
 
 
 def build_404():
@@ -850,7 +971,7 @@ def build_llms():
         f"> End-of-life and deprecation dates for {len(PRODUCT_LIST)} SDKs, runtimes, frameworks, databases, operating systems and managed cloud services, with {DOC['counts']['cycles']:,} tracked release cycles. Static snapshot generated {AS_OF} (Asia/Seoul). Every date is copied from an upstream source; none is estimated.",
         "",
         "DeprecateWatch answers questions of the form \"is <product> <version> end of life, and when\". "
-        f"At this snapshot {COUNTS['eol']:,} tracked cycles are past their published EOL date and {len(UPCOMING_90)} reach EOL within 90 days.",
+        f"At this snapshot {EOL_WITH_DATE:,} tracked cycles are past their published EOL date, {EOL_WITHOUT_DATE:,} more are marked end of life with no published date, and {len(UPCOMING_90)} reach EOL within 90 days.",
         "",
         "## Machine-readable data",
         "",
@@ -875,7 +996,8 @@ def build_llms():
         "- supported: published EOL date is in the future and active support has not ended.",
         "- security-only: active support has ended, EOL date still ahead.",
         "- eol: published EOL date has passed.",
-        "- no-eol-date: the upstream project publishes no EOL date for that cycle; no date is invented.",
+        "- no-eol-date: the upstream publishes no EOL date and does not mark the cycle end of life (eol=false); no date is invented.",
+        "- eol-no-date: the upstream marks the cycle end of life but publishes no EOL date (eol=true, eolFrom=null). Shown as ‘End of life (date not published)’; counted in counts.eol_without_date, not in counts.eol_with_date.",
         "- days_left: calendar days from as_of to the EOL date (negative = already past).",
         "",
         "## Sources and citation",
@@ -909,8 +1031,9 @@ def build_robots():
 
 
 def build_sitemap(urls):
+    """lastmod는 빌드일이 아니라 그 페이지 내용이 마지막으로 바뀐 날짜(site_state.json)를 쓴다."""
     items = "".join(
-        f"<url><loc>{e(u)}</loc><lastmod>{e(AS_OF)}</lastmod></url>" for u in urls)
+        f"<url><loc>{e(u)}</loc><lastmod>{e(mod_of(u[len(BASE):] or '/'))}</lastmod></url>" for u in urls)
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}\n</urlset>\n'
     with open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(public_urls(xml))
@@ -944,6 +1067,15 @@ def build_feed():
 
 def build_api():
     os.makedirs(os.path.join(SITE, "api"), exist_ok=True)
+    # 모든 API에 출처·라이선스·인용 문구를 붙인다(교차검수 P1-3: eol.json만 갖고 있었다)
+    def api_meta(*source_ids):
+        return {
+            "license": "MIT — site code and compilation: DeprecateWatch; upstream endoflife.date data: MIT (© endoflife.date contributors)",
+            "license_url": "https://opensource.org/license/mit",
+            "attribution": f"Source: DeprecateWatch ({rel('/')}), data as of {AS_OF}, upstream endoflife.date. Keep the as_of date when citing — this is a dated snapshot, not a live API.",
+            "sources": [s for s in DOC["sources"] if not source_ids or s["id"] in source_ids],
+        }
+
     full = {
         "schema_version": DOC["schema_version"],
         "generated_at": DOC["generated_at"],
@@ -952,6 +1084,8 @@ def build_api():
         "counts": DOC["counts"],
         "definitions": DOC["definitions"],
         "sources": DOC["sources"],
+        "license": api_meta()["license"],
+        "attribution": api_meta()["attribution"],
         "products": DOC["products"],
         "upcoming": DOC["upcoming"],
         "lambda_runtimes": DOC["lambda_runtimes"],
@@ -964,16 +1098,23 @@ def build_api():
         "cycle_count": p["cycle_count"], "eol_cycle_count": p["eol_cycle_count"],
         "source_url": p["source_url"], "page": rel(f"/product/{p['slug']}.html"),
     } for p in PRODUCT_LIST]
+    meta_products = api_meta("endoflife")
+    meta_upcoming = api_meta("endoflife")
+    meta_ann = api_meta("gcp", "aws", "azure", "github")
     with open(os.path.join(SITE, "api", "eol.json"), "w", encoding="utf-8") as f:
         json.dump(full, f, ensure_ascii=False, separators=(",", ":"))
     with open(os.path.join(SITE, "api", "products.json"), "w", encoding="utf-8") as f:
-        f.write(public_urls(json.dumps({"as_of": AS_OF, "count": len(products_rows), "products": products_rows},
-                                       ensure_ascii=False, separators=(",", ":"))))
+        f.write(public_urls(json.dumps({
+            "schema_version": DOC["schema_version"], "as_of": AS_OF,
+            "count": len(products_rows), "products": products_rows, **meta_products},
+            ensure_ascii=False, separators=(",", ":"))))
     with open(os.path.join(SITE, "api", "upcoming.json"), "w", encoding="utf-8") as f:
-        json.dump({"as_of": AS_OF, "count": len(UPCOMING), "upcoming": UPCOMING}, f,
+        json.dump({"schema_version": DOC["schema_version"], "as_of": AS_OF,
+                   "count": len(UPCOMING), "upcoming": UPCOMING, **meta_upcoming}, f,
                   ensure_ascii=False, separators=(",", ":"))
     with open(os.path.join(SITE, "api", "announcements.json"), "w", encoding="utf-8") as f:
-        json.dump({"as_of": AS_OF, "count": len(ANNOUNCEMENTS), "announcements": ANNOUNCEMENTS}, f,
+        json.dump({"schema_version": DOC["schema_version"], "as_of": AS_OF,
+                   "count": len(ANNOUNCEMENTS), "announcements": ANNOUNCEMENTS, **meta_ann}, f,
                   ensure_ascii=False, separators=(",", ":"))
 
 
@@ -1042,6 +1183,8 @@ def main():
     if os.path.exists(SITE):
         shutil.rmtree(SITE)
     os.makedirs(SITE, exist_ok=True)
+    # 먼저 모든 페이지의 데이터 지문을 계산한다(lastmod·dateModified가 여기를 본다)
+    compute_mod_payloads()
     with open(os.path.join(SITE, "assets", "style.css") if os.path.isdir(os.path.join(SITE, "assets")) else (os.makedirs(os.path.join(SITE, "assets")) or os.path.join(SITE, "assets", "style.css")), "w") as f:
         f.write(CSS)
 
@@ -1077,6 +1220,7 @@ def main():
     urls += [rel(f"/category/{c}.html") for c in BY_CAT]
     urls += [rel(f"/eol/{m}.html") for m in sorted(set(list(months) + list(past)))]
     build_sitemap(urls)
+    save_mod_state()
 
     html_count = sum(1 for _, _, files in os.walk(SITE) for f in files if f.endswith(".html"))
     size = sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk(SITE) for f in fs)

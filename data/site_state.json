@@ -1,0 +1,2121 @@
+{
+ "as_of": "2026-11-18",
+ "pages": {
+  "/": {
+   "hash": "5979896be0913ab87d22afe5223e56e9254727b36de05fb82860412e64f7cacd",
+   "lastmod": "2026-11-18"
+  },
+  "/about": {
+   "hash": "c7b724114bd89ddbab9f7451591e85f6b98d0513ff025e5978c24b84f3d2d3eb",
+   "lastmod": "2026-11-18"
+  },
+  "/announcements": {
+   "hash": "f4bca779d729aee5edf545e59b3f68ff8fdb7cbcc48adfde9c2200c48672b906",
+   "lastmod": "2026-11-18"
+  },
+  "/calendar": {
+   "hash": "f4f8fd657f4a0d4cf0ac655beb5faa09d48c6fbd5a1740d32be7f7c713973331",
+   "lastmod": "2026-11-18"
+  },
+  "/categories": {
+   "hash": "f5b0876407080fa043dffe73112808a25239e4bc276e6962727720cfde1eb3b6",
+   "lastmod": "2026-11-18"
+  },
+  "/category/app": {
+   "hash": "b2e7d6beedcc1379d1b743956b1338cc1bb1a02f4cec6db0421d40e9cf1e4c68",
+   "lastmod": "2026-11-18"
+  },
+  "/category/database": {
+   "hash": "e908a07cb92eed6f62fb5395f753b6467c0700cf0bf353fb3be04e6ad2af9420",
+   "lastmod": "2026-11-18"
+  },
+  "/category/device": {
+   "hash": "85af09a6e9157d3df3f855d4dcc50250df011a84f117e1ad5afb0d77ac927b15",
+   "lastmod": "2026-11-18"
+  },
+  "/category/framework": {
+   "hash": "96a7ed8f9394202a653d7e24395f25ca2895b8e64e3ac412fbba30fc849b0540",
+   "lastmod": "2026-11-18"
+  },
+  "/category/lang": {
+   "hash": "b5c0f782f88f648bb6277523a3e139841dfd8d48b06e27f4aa810591a343217f",
+   "lastmod": "2026-11-18"
+  },
+  "/category/os": {
+   "hash": "c9be2b66bea3464f7a5bade4418873ae6198a6095ce4d3c6c77bb4482c61647a",
+   "lastmod": "2026-11-18"
+  },
+  "/category/server-app": {
+   "hash": "d66a2c0d95ba5312086d6d40895dd973fdc60f2f36b1eddaeabd34897414eaa3",
+   "lastmod": "2026-11-18"
+  },
+  "/category/service": {
+   "hash": "a7cf5c57292e7f3cb2fa35b603c20b21ab3022819f9a79922df547e6e9b06d7d",
+   "lastmod": "2026-11-18"
+  },
+  "/category/standard": {
+   "hash": "f85ab582ab6fdca2f67d83181a1733371cbe18947100f127e95457bdd60105e7",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2025-11": {
+   "hash": "d84a071baa8ad3610aa633e8d826756eb9a337df5caf7462a9cf28c37c30adc2",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2025-12": {
+   "hash": "9bc49bf3e593d947f165878bc1936eaf268c55d7eaaba805a4509ffd5b44ec42",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-01": {
+   "hash": "f979970b67552a9612d7535419823c2b5ee090e9efec1c7c89a9a86d8747a1bf",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-02": {
+   "hash": "f7336e4edb48c4303bf39e0c28f3d6df52afbd2c645753642aeda09ff9a6539c",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-03": {
+   "hash": "89f47bb877a0711e53e5da37daaa2776a08ac77871ef51a36d8934367f560bb4",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-04": {
+   "hash": "93745267d26fadc6c7e9380d56bd99b5740188f63b44a654e1685f713ac3a651",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-05": {
+   "hash": "2ebd6c0fb05fcba53e9f8b630004e43ae4f55f101d37c69abcff9b868ccc0b7e",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-06": {
+   "hash": "8eeaa70598923660a8866999d0f74cb70a7635f13ccba39497cd018515457d7c",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-07": {
+   "hash": "f293db11aa4cf79c2b242b34ec45db178f1457db7464075107e83b0b4844ce18",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-08": {
+   "hash": "bfe0cd7d01b91c163bdc6d49ff63550e578ea119530eebf96dd13589196d988c",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-09": {
+   "hash": "f9f755e1b9f5e484a7892ff2f67fef7844e9828021f85860b38348037b544d37",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-10": {
+   "hash": "8cc4b5f9052d17d878e29297406eca580fa6bedd4a5fda8eceda53361db1fe8a",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-11": {
+   "hash": "2b1f2567ce67c35b4c5dfa51136c3d0801df48879992bfdfc4d590a0124ca4c2",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2026-12": {
+   "hash": "83b9c4def785fa773cf96dce49161fd959abd74c86d7145549e6e26ef054aaf0",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-01": {
+   "hash": "34399ab6e68994aa691b389aea27438503f479aada8ec82ec001d72a9419cf91",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-02": {
+   "hash": "187a9349b66d9dd6179f034a4fee0ffe52748b2306b80d244ab00c1b45494ce9",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-03": {
+   "hash": "0fffde0cb389a2193687f87b32f95417b66945787ca4cb7b9873a92b498e8119",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-04": {
+   "hash": "c128618d6ab7f079b86509a8a02c7d49b92ab06958253dce881d5b6143bfbc88",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-05": {
+   "hash": "998bc27bb71ba11aa26f981e5fb5a66530af5c545c84d53c27f24cbf2b9bf166",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-06": {
+   "hash": "70c097eb14fa24ac8ec99b7363f0254b763b83ee5e28ce7f9ad922fbb2dffbc2",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-07": {
+   "hash": "8aa4eecbba837919c7da953b967dbd3e4ca35f46a63500e607317a1305748cb5",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-08": {
+   "hash": "ac658a97425fe037c9d2bccaa3f8801c3af577344c7b6b2c60c5f877eb82a816",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-09": {
+   "hash": "8b2ba0b4f646469a3aaec47b1dcca0150b35c6c174103ff35b36fd99820aaea2",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-10": {
+   "hash": "500ed3825d03c9b59698b92a0d4f7d49f434ebeb55acf01f593ce67cc1df925a",
+   "lastmod": "2026-11-18"
+  },
+  "/eol/2027-11": {
+   "hash": "ca2da81522612a77b6041d986b676d4d242af32aa237aa0dfa42007c865336b7",
+   "lastmod": "2026-11-18"
+  },
+  "/privacy": {
+   "hash": "1d99e88e64edf0beb44b521a4b7dd495fa0496b6260d40952573008451aad226",
+   "lastmod": "2026-11-18"
+  },
+  "/product/adonisjs": {
+   "hash": "ce0ae56ccf2382664c521ea6dbc6fad6e971ab6bd6024acbf1f97294911a2a7e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/akeneo-pim": {
+   "hash": "cb98c349da9eb20dddf355d49ae2c2f51c3ca586abce93779b72c571feaf720c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/alibaba-ack": {
+   "hash": "ca2565130305a26ee8aac3c7e6854cd960fb484e040d54e368b6d9ae3660372c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/alibaba-dragonwell": {
+   "hash": "3911eb7163e2bb9abff07016f05bf686b7667de8a9a9a5e3cdb401b88d55beab",
+   "lastmod": "2026-11-18"
+  },
+  "/product/almalinux": {
+   "hash": "25b63aad7f5a01d8916a64315387b34a32a450f41b628cf4c93e12d0c9094455",
+   "lastmod": "2026-11-18"
+  },
+  "/product/alpine-linux": {
+   "hash": "8a3f22fecbe1e564e83ad1990d606b37bacddd5d0526faceb5dea86c89e79521",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-aurora-mysql": {
+   "hash": "47b9d448d654ff0155d866ef7689d7a7df44fcfc66f38078bcc36fd777aa68d5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-aurora-postgresql": {
+   "hash": "37a580fcaeee31c6c653937d7dfb88e2de55fdfa25bdb56baa01959510af1435",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-cdk": {
+   "hash": "e0448c59c1982d1f0b9b97dc1bc3640afeb70cadc99fb0b2c49e8e8248267897",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-corretto": {
+   "hash": "4c8d59072d97ee0a7bfba7163e0fbf4b8d7d0bc02573e37a93a6aae0e5ab7809",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-documentdb": {
+   "hash": "51405c2eb6dacf8cb9404bb1175e3d8ab7848b1039215ee36d9cc5de9e958068",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-eks": {
+   "hash": "66f683e71534f8a8141f3192fac542626a6f8b0ce60d6a49b87cc1414527bd5a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-elasticache-redis": {
+   "hash": "576e82cc42ee881a4aa66aa0136555121beb5ffeedceb833f44484acdcfc7f94",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-elasticsearch": {
+   "hash": "a109be6524b9db68003eb09758bde37d46d063fe5e634d8cc5eeefc9811ea439",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-glue": {
+   "hash": "47b152cf663d3b09db4031ccc1456c064830d0d28d9e65e4292b0e411e64976a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-linux": {
+   "hash": "4f49d403ec37c02e68b8eb49ab1a078efa3eec1fd8d8a90397bd3a63842673b9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-mq-activemq": {
+   "hash": "e68ca0466aa61ce5770692bfc247f4db0cc5fe93128f7f727979a7858fce85c5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-mq-rabbitmq": {
+   "hash": "39544a55bf151d7079517e7cbd04cbfd878e4d965b84644ab30b476ea6205b7b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-msk": {
+   "hash": "f1c92ff523152172bab87d8fe6d06f3ee24018ef5b82d74815c606e97a7f8297",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-neptune": {
+   "hash": "e48d91197d435c011f40cb50e5caba3b712f738b6071196b1f1bcad0d8186c9b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-opensearch": {
+   "hash": "2466cc26c574bd7ba18a3bb3aa4217a0bee5ab4ca41d6b4496680d58464a446f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-rds-mariadb": {
+   "hash": "2521342bee47f82b42e0ef04c0016510bcba7ba2591c5eaec72280befada28f7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-rds-mysql": {
+   "hash": "ea7972f89d3cb1c810d16c6649c8560c4167350612057017e715c78986ac5142",
+   "lastmod": "2026-11-18"
+  },
+  "/product/amazon-rds-postgresql": {
+   "hash": "25360ada6c3ef5bf85b09b0a009d0eb5c9370f34e3a8caf33e045125d6ce57c6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/android": {
+   "hash": "e49039e821376d127a334cbd1cf7cdf23936f520185cc93cf5f34846efe754ad",
+   "lastmod": "2026-11-18"
+  },
+  "/product/angular": {
+   "hash": "ccd438c1f2df8912a5f5715796db1a827ebd12241374c029c1f8d4897d3bc20c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/angularjs": {
+   "hash": "64e9e16f3a524a91fcc99ceebf3e79d20e3a28e69bc29dcd1db3923307e9e201",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ansible": {
+   "hash": "9bbd2ad076ae83a3408ecbda918098db9fc4055c6b56e12e0f15c52c3d91138e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ansible-core": {
+   "hash": "fbd65541bc6071913ea48f582ca7f006d6ef9066dc79090b3c49696b4c9fdcfd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ant": {
+   "hash": "a713b0ec41adedf9efb23bcd6b2c0214e6f99ecc59317099fb0e84ef27749fc1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/antix": {
+   "hash": "b6657beaad608993265dabd440a4b97bad52d81120ba19ccaa03cd46522a40dc",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-activemq": {
+   "hash": "55de6fbd0b6163a3c7a171de9947fbc7274852e9f5e2cddc96bd401e9ec646e8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-airflow": {
+   "hash": "ee543f3c69cf72a8526d47cd78415b36fefd120b435f79303ae17ce84b4edf8c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-apisix": {
+   "hash": "27c2a8e7d5b682932cb14155f55d324ff89fc7aef567de1bb8f3cdf9e83d9cbe",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-artemis": {
+   "hash": "71609024e95eac0a2c5ba83059a871d67a729839753d87da753fa094ff5af27f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-camel": {
+   "hash": "afd177ea8a8e2966c5c70deae4fe5b3638bf46052772bd537d9dbff70cc1c95e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-cassandra": {
+   "hash": "2d4c373e0b4773a4fb17a15090cddf4c42c09d3c77bfdd2cc25038890340499f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-celeborn": {
+   "hash": "f7bb95efbf23fac0d8703c69ffa23f785298b422553904fd3d3cbbfde762e5ca",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-couchdb": {
+   "hash": "ecbd9b57cee88d104f4981813c32ab3462a08b5d980f885d2194a7c6fffeea82",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-flink": {
+   "hash": "e13f1328abf201d0048e82309028abbd882d987c9ef01b0b2f7a3eaa8f444dd8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-groovy": {
+   "hash": "e9262b640c2d371e97f1a4450e1bb462ca2b37d11fb2be8103283bd277e458ca",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-hadoop": {
+   "hash": "198daabc1a8c809c082809b334bd5aaba98db9cc7d9db0666ea31ae8b4c2f5a2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-hop": {
+   "hash": "6cde4db501f9004e37cf9175556a8dec0f688d54181365a77d674f0493dad700",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-http-server": {
+   "hash": "2bdc69249a3f8e64272b742c9846b28976d0bb9e8df8eeeb42db471bc72445cf",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-kafka": {
+   "hash": "70fde5ead24b0b5d75784f64e19cc7e80d71e4cd00adacca1ab37a04911594a3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-lucene": {
+   "hash": "b0cffee2bac85fe6cc6485d2475d2fe43f44f4f72d2b3e6f7e7d402671aedd23",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-maven": {
+   "hash": "ae398835db8c98d383cd0c621597844d14e940bcca267cd4d7df5c907836f90b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-nifi": {
+   "hash": "455caf2bc12df2aee8c09477cc1b07cda48bc9de60542982720d18a3376a6994",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-pulsar": {
+   "hash": "36d846e2151fcd60258297a12932f2ff0b4976b1dcee97a3a8970b6a6d74031d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-spark": {
+   "hash": "9f6c86802577c98a8a156cee5d7a3161a53c8d53641e35d031ac6cb2dcd73bc5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-struts": {
+   "hash": "85bde64bf46f188391d356a922e23d638b629a4bf314fe19dd9510b0710507ca",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apache-subversion": {
+   "hash": "ec0c0001d58024e906cc7a4675a48034b89537c711a0285b37ef649477d1cdcd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/api-platform": {
+   "hash": "7172f53eef37a2e51343f02d9b11ba4b2e4d2c2fa66e1f2b8b9dc98c51bbb3e6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/apple-watch": {
+   "hash": "fb4c954ddbb529833a9d8b7b7de8d8e17c68c6e9d7cd3412b4f39da164c8d9b5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/arangodb": {
+   "hash": "24f6d6bc2365c8b121e284f5051cf4bbcd2e029537cd4a94a74c1dee1d1065b4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/argo-cd": {
+   "hash": "da8acc540247a37dd0fc7260232bf1a76a48214da7a57ab8ef41fa82110716bf",
+   "lastmod": "2026-11-18"
+  },
+  "/product/argo-workflows": {
+   "hash": "2b85dc8072f1509abd257c0d145864c897a130cb33d93dcd1c47edd3e0de4e2a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/artifactory": {
+   "hash": "d8da3b899506e576c45ffb130c8b6073ab22d033e50737cc067502e5a06e5ffb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/authentik": {
+   "hash": "fb5e6fca2f7836453a25bcd1f9b7c42e362e87becb1c8efabee3e0bfe35c25e7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/aws-lambda": {
+   "hash": "32cbde3e228cca54de1d51279164a4b094f1ac9619cc6ba6d65cd0aaf12e27e2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/azul-zulu": {
+   "hash": "651025b5a53702e407beff013702529db2e48f880edac25885fb8ecf376e166a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/azure-database-for-mysql": {
+   "hash": "c95912758df211283a6a81c0a33a5b40a4791a2ebd05d55b2dd499c675718efc",
+   "lastmod": "2026-11-18"
+  },
+  "/product/azure-database-for-postgresql": {
+   "hash": "4cfd27f1053485b05c03bec776e0d7ffa55f30b633ab66343aeed8610737ec08",
+   "lastmod": "2026-11-18"
+  },
+  "/product/azure-devops-server": {
+   "hash": "acf025ffda26ed0d0c3b7b5fcec8d81e6122725b3055a137a706105aec927d3b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/azure-kubernetes-service": {
+   "hash": "4fc4de25d464f079a38dde15f5ebaec079198b2493d20a1cf7df1557a0724b2f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/backdrop": {
+   "hash": "98db92845b1cc81d9546682dfc3608ba8de2ffc60a9cef1445d6dc3106a435aa",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bamboo": {
+   "hash": "6b1a3d13ad8c0f97658c0b63aa7c0debd459a752ba7f2c0741fbec15f6fa2b53",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bazel": {
+   "hash": "53a26ac19f9df3dfc3522fc5044f9ac34169fae03807678d68b0caa5c11cc112",
+   "lastmod": "2026-11-18"
+  },
+  "/product/beats": {
+   "hash": "7c18a7114df105592263a26d36ebe1b582c57b3c1883e3e8a4116785f1a8b27e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/behat": {
+   "hash": "0764bb6aee4a6636f0411cd626b37667563dc74189aae18b708f688a87d69c54",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bellsoft-liberica": {
+   "hash": "a53b32f81b287fc4a2e9bf41416de1e92e602146c785405ec63ce4d926a75a28",
+   "lastmod": "2026-11-18"
+  },
+  "/product/big-ip": {
+   "hash": "7a6561704eebf3d768af2c33944991830827b136ddd210dceccaf0c3e9574c12",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bigbluebutton": {
+   "hash": "2b3db1d7fa95ec026260a1477d5c69f58e3e2814d15ab75a9d573a844f5bcbe1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bind-9": {
+   "hash": "51e857d6e9299697a28ff45e52ddec37e78ddfb1a6b1dd220ad6afcb8b7fdc26",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bitbucket": {
+   "hash": "bbd123005d9ef154f0d35569b9e7f2f81a01d9bb7b823b72f9d46a564428be39",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bitcoin-core": {
+   "hash": "8872e49bbcad9a4db159f1c92c1f64437361dad2e8f1c08eb4adc0a60ba101ff",
+   "lastmod": "2026-11-18"
+  },
+  "/product/blender": {
+   "hash": "95509f012414e5e9495bed1cb805d5d567ec9588c19399666c091f31a2dda662",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bootstrap": {
+   "hash": "8347fa1a675ead3e1c7e4680fe7ae5771a036c586936c24bd82b2138a1d0ee5c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/boundary": {
+   "hash": "b04da6a40ca123853c3f5a2accbae6c983e4725d860398f09a69febd16f6c188",
+   "lastmod": "2026-11-18"
+  },
+  "/product/bun": {
+   "hash": "0491331f7d03785b13a84b2cf37d3e45123458e3430fafbd83e304eaa2b937c2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cachet": {
+   "hash": "39bf36e9a3f7988b2f8bd1e4e119dfae716784f43bddb657296856637241392d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/caddy": {
+   "hash": "e0e564b0b07ba282d4e703b87c51a86c7c3a4356e14707cb8a677d823af298cc",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cakephp": {
+   "hash": "37a527a861ec83b6b4453b2c7f1d65db1e8df354f31dc79b1562e6a9c0924852",
+   "lastmod": "2026-11-18"
+  },
+  "/product/calico": {
+   "hash": "5543d6bc6cabd8875c5a0dadf0ecde5c4ba5114952b8327ac744a94da0104c3f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/centos": {
+   "hash": "c6c3c2f9941fa7b3e8865b904ae86384bd3d46e2b57c44c65790684863e42f70",
+   "lastmod": "2026-11-18"
+  },
+  "/product/centos-stream": {
+   "hash": "57ee55bc1e7cac19f55956aa041e27edfec7a354d9c4460ef88653c761cb1b12",
+   "lastmod": "2026-11-18"
+  },
+  "/product/centreon": {
+   "hash": "906743be8d5b66f77f04cf2d610d5c295171b08ed398ca980d85b94fbe80c853",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ceph": {
+   "hash": "4c1b932116d87c03379b179ff1a0828bcefd3d4153aee12968bc4bcdbb9e1019",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cert-manager": {
+   "hash": "d589f9c43adc7bbe5e5f85d667fac20d72a67d1fba3eede7f854f77618445e39",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cfengine": {
+   "hash": "05def16298304911192de719290781fba994fda60b7b085d3bb286a91e16ca76",
+   "lastmod": "2026-11-18"
+  },
+  "/product/checkmk": {
+   "hash": "ffb3a144aa75080abf505942082a945cadfe0fcbdc0b30d8c5d0eb4fb58e5a54",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chef-infra-client": {
+   "hash": "8c0ab6a67eea46dd4abeb1dbe5f2c61c67f45b47bbcdf3063d7f265366c2104d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chef-infra-server": {
+   "hash": "0b1cb30f9599cc32d72a04e8601bc15e6446f267d3ce2cb5890897a913a37bb4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chef-inspec": {
+   "hash": "d7cbb436c8f9d64ca7c99552517e9150be9e6b1663bdeae3a9075a83aa5fd1c2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chef-supermarket": {
+   "hash": "b7fdcdbd9a27cdd0f0ed1645b8bfd4165f2f52a9ba61b64223fcb8e88d63986a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chef-workstation": {
+   "hash": "f475f37c9c9b21c95e5375148095adb0f1c013277a0ababdd48f9831d98fbead",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chrome": {
+   "hash": "4c6541f21f2328b11cab733d5a4ede13604bac5b70c3e8b3440dca19ac3a3d93",
+   "lastmod": "2026-11-18"
+  },
+  "/product/chromecast": {
+   "hash": "66470f37b0bd0a67825b7e4cd380e508ac82a43d84ca0d0c5e7ae475560013d8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cilium": {
+   "hash": "0706202d796ee75892437f0d2c0c3fdd795b92bf96f7d2ecfed6c7a793f7c1c5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cisco-ios-xe": {
+   "hash": "c10840b9209b1f34838f3dbdd245be971a3edc254f4e0616b63b6941c4efa427",
+   "lastmod": "2026-11-18"
+  },
+  "/product/citrix-vad": {
+   "hash": "573d03a14832ac5fb9c826793050c5c3a63b6b9b4bd0b0bc8507dd1fb1a3add0",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ckeditor": {
+   "hash": "b287360b0ca3be6a05a362ef1755fd05d56e043c2a86fb58975daff4810996f4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/clamav": {
+   "hash": "add46a98f8ce31e117210b788ad73d5ad9a531611b51af79e25b19060b0f2dba",
+   "lastmod": "2026-11-18"
+  },
+  "/product/claude": {
+   "hash": "a7bfcdc77886656fec74a3c5842cb0a588f4281297a7fc39c92b01f736e6eb28",
+   "lastmod": "2026-11-18"
+  },
+  "/product/clear-linux": {
+   "hash": "f2f1eddd0c3d1fc1a6bec5c64eee9bc7ee5153159296ff2c4eff9694dddfc21e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/clickhouse": {
+   "hash": "dcf4a3fcddce6f0fbe37850dd3dc3375f6794a033c939a8441e05f48301a273d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cloud-sql-auth-proxy": {
+   "hash": "791cadf64f2b94a2b25db0e3b741f535ea5f83a9f7e34d377c8e3074a6ef76f3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cnspec": {
+   "hash": "ca8cb7d47dfec5fc1c261f845c0038833c4ee4f4788d5013212ea22851dbf7ed",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cockroachdb": {
+   "hash": "13dd7491f8447a170399a92355189e32e690b634ee528e654205cff3a33dad89",
+   "lastmod": "2026-11-18"
+  },
+  "/product/coder": {
+   "hash": "d9203cfd3f19c2741760fbb926b4e8a45e161daf545f4b0ed5f6dcd3379f34c7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/coldfusion": {
+   "hash": "3aa9d3eda7f68768124d10e7c678db6afbd16b19d4ef53289e8e4616e33d6f5e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/commvault": {
+   "hash": "4b236b557e179b401939087a2f6469fa5c2f65279c01d551313b806760a9fb12",
+   "lastmod": "2026-11-18"
+  },
+  "/product/composer": {
+   "hash": "2abf1eea4fdf6c0929b925ab1768779ef3d95820ee31b4f2efacc25e772b1550",
+   "lastmod": "2026-11-18"
+  },
+  "/product/concrete-cms": {
+   "hash": "3683bbb0aebc07a5418e24b16b110e59c0562b0d889bdf8fc408e4748ef1a58e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/confluence": {
+   "hash": "ce8796d1caee66d3a7a29019505f36233bbc4019124f9ebadec568dad8839d97",
+   "lastmod": "2026-11-18"
+  },
+  "/product/consul": {
+   "hash": "8f8a45fc025057fae8f974c0a9b69632b11241d159b8882225d9272649a98480",
+   "lastmod": "2026-11-18"
+  },
+  "/product/containerd": {
+   "hash": "a3f7c62b2a66bfd7dbef5c210731e0005101443ec3377eaba386e427f423454f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/contao": {
+   "hash": "2d40a66228297aca94d4cfc644355765401466e4dbbeee6074226c13bffb72e9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/contour": {
+   "hash": "78850f6b10ec368752f2356f8f3a257efd7f23ea2d3197964f11135c9a6028ff",
+   "lastmod": "2026-11-18"
+  },
+  "/product/controlm": {
+   "hash": "58f865dc4cad3398f4d15fa7ffa0665ca5ef659e5acdc808ced2f2fdcb650b9a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cortex-xdr": {
+   "hash": "db2c7174fd1df21714e105d3518039ca98cd0bf741a8ae8dee9cfb2117bbb0d4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/cos": {
+   "hash": "e1050150ad5905226fb27191ca3cdc1a0da150b0ad5e151ca95ee6e969eb8a71",
+   "lastmod": "2026-11-18"
+  },
+  "/product/couchbase-server": {
+   "hash": "9391779e6e6a6c7d892a1288430d0cd2124746a28dbf0fa81a486b65c607d30d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/craft-cms": {
+   "hash": "fcae62632068d3261eaa359d97777afd6f4609c5c77befe917f28bc39d69cb5a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dapr": {
+   "hash": "45be5671b03cc73ad3bbfbd706281dab22abc62cd3fa4eada2ecc88c8daeadd9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dbt-core": {
+   "hash": "58532e14c8b8270c6041ef724b2b74e7069a8c77cf558136ba1a28c6b3e6d3b3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dce": {
+   "hash": "1fa020e2d67f7950f280298ea3aee25ad69399d511d848b84fc5e88bcc1234a8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/debian": {
+   "hash": "76c92c764d44f05e4159c253e73094c9a71485aa457f913c047ac2b2c52a70fe",
+   "lastmod": "2026-11-18"
+  },
+  "/product/deno": {
+   "hash": "8ec7d390813b049c4be87d4fe0bcbb0a9ae5ee880722ba4f88879f896a0f93f8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dependency-track": {
+   "hash": "c56facf3b2b1e41e72d606b43effa0ee530aed8d547cf4aa90c23c2a1eb34645",
+   "lastmod": "2026-11-18"
+  },
+  "/product/devuan": {
+   "hash": "f699ed4d28bb4582185dfeae1cdda17afab79af562cce48157b57fbf2f5d1412",
+   "lastmod": "2026-11-18"
+  },
+  "/product/discourse": {
+   "hash": "9128db44a6dbba6a5601d01b2f4aaabdb7bed345d67c25264d2b06fd161376bc",
+   "lastmod": "2026-11-18"
+  },
+  "/product/django": {
+   "hash": "3b0e76e883e6f5bad64f4e24995493c219c0d680d22aeba17c6504794a200f11",
+   "lastmod": "2026-11-18"
+  },
+  "/product/docker-engine": {
+   "hash": "6d9cf9773f722b7a6a9b41e958212a15b7230f57b8b7830ff39eacfa1385f2b9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dotnet": {
+   "hash": "c1fcb8ffb35f4d44511a6fc79d72cdf9ff3998cca78d8ad87ef96dfad987aac3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dotnetfx": {
+   "hash": "cec535ac85f347f6a87e46c05d55bd771bc3d7e3b5946e6ae6c8a1b541768261",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dovecot": {
+   "hash": "3b32469fd3f8fc983d7bd3fe089c289c98d4fbcb7dfbab24fc54e702ed35d695",
+   "lastmod": "2026-11-18"
+  },
+  "/product/dropwizard": {
+   "hash": "5d2119d64ed3a5cb105694f28de7cc73f08cee7f525eae3f7ea24c45846b3854",
+   "lastmod": "2026-11-18"
+  },
+  "/product/drupal": {
+   "hash": "dcb5da12ffbd03d4c92435b1dd10ffe5bed1efce68901b3ea032ac466d03c92b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/drush": {
+   "hash": "6a183ea4661f96aa96db477170b41d7244a84fa54ebc756bacbff6af10ec3d54",
+   "lastmod": "2026-11-18"
+  },
+  "/product/duckdb": {
+   "hash": "1198d272d5e4130cd2c07afc8791a2c97ad50e51c5d4924b645cf0f1a100128a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/eclipse-jetty": {
+   "hash": "1acec38aa0166a2ce5a56ee68af79970f434da216749b3e7e35c45736ea53882",
+   "lastmod": "2026-11-18"
+  },
+  "/product/eclipse-temurin": {
+   "hash": "44340e7cb2fecb62bd7ad04b8eee244f19ee412dc203e87cc77123d9eb7e2ab7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/elasticsearch": {
+   "hash": "766d8b255353cea7ce649aa6b52edb024dcc47dacef387ebc523679e10a84578",
+   "lastmod": "2026-11-18"
+  },
+  "/product/electron": {
+   "hash": "7b1520bc0fbbd5910db3fb3c952e25ca3c13079c70d545fe4bb8bbeb5d24dba2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/elixir": {
+   "hash": "d05cea8cdae838f6b732f271767295056bb8c1c0721938164028304ab92c6cf4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/emberjs": {
+   "hash": "ba25cfd2b8f915c00a8f417a990238be8ced38e787d26f7e839961370f732bdd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/envoy": {
+   "hash": "79be2a68c282e8a098ea7b783a72e6877bf430f4200ce3afb2d8ea99c50ab94c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/erlang": {
+   "hash": "3c7f17517a34d76b24299305c775e865b531ea4c39eaa416f285a2bfe153cb71",
+   "lastmod": "2026-11-18"
+  },
+  "/product/eslint": {
+   "hash": "cdaa50699355d440732a44b881ce76779ef116d59e022d6e46191a31661623f7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/esxi": {
+   "hash": "f9270731d4357a5e78ee322eab9e5a1963e9e9d463b0ba12c419b6c345bb6d02",
+   "lastmod": "2026-11-18"
+  },
+  "/product/etcd": {
+   "hash": "5b37f5ceb918897db86cc1ffbcd22c810d69f4989eab71a19d326f2ee0900154",
+   "lastmod": "2026-11-18"
+  },
+  "/product/eurolinux": {
+   "hash": "be0dfd26a0e6c0fff95decee5e32aff5717dc56c49fc3f699c30d8c056ec3a98",
+   "lastmod": "2026-11-18"
+  },
+  "/product/exim": {
+   "hash": "1e51ca2bf4eb26517cf28c2ac4c9de49742ab643c1c077bcc66ab2279757ac02",
+   "lastmod": "2026-11-18"
+  },
+  "/product/express": {
+   "hash": "727c8a057bca506f77a3f8d6c884ec3522a31d1cee100b9c86df3732454b4391",
+   "lastmod": "2026-11-18"
+  },
+  "/product/external-dns": {
+   "hash": "064105a310195f2e2c3e366e985725b0d81920c627553a3be0b6554386556a39",
+   "lastmod": "2026-11-18"
+  },
+  "/product/fairphone": {
+   "hash": "6041ebf9714c8d5120359ad7f225b1311db8903259f4d7c80ca06d686fbcdc89",
+   "lastmod": "2026-11-18"
+  },
+  "/product/fedora": {
+   "hash": "db59dd2400f512f60c6ca42a543de22097437ee6c595aee3528243626cb954ad",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ffmpeg": {
+   "hash": "8fd516355f673f2ffc6cbd492958f556fa4701dea6bc6a1b9ce92b2703126b28",
+   "lastmod": "2026-11-18"
+  },
+  "/product/filemaker": {
+   "hash": "1c6585b225875358076a487d2d22236a61b168c5c2b7de96b578e8c55d40d43c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/firefox": {
+   "hash": "ff1a732585ee0fc1b24b88ffb5a96a5c64e38df7d055bbd3fb3b0312585b0d59",
+   "lastmod": "2026-11-18"
+  },
+  "/product/fluent-bit": {
+   "hash": "5b9419cec3269956bce93d26d37db36c708ed2ad65a6fb26809d72b135f57009",
+   "lastmod": "2026-11-18"
+  },
+  "/product/flux": {
+   "hash": "7e8bd1bda09205e2519e7080ea93e69e27282681dcdf9b716afbd1b743c9258e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/font-awesome": {
+   "hash": "4cebd88d92dae9eaff14af924f054c09f34e1f6625b3b6fc53c9a7d1b14980aa",
+   "lastmod": "2026-11-18"
+  },
+  "/product/foreman": {
+   "hash": "abeb333b6d059b2fbd879822f11ee196908260d65d603ee49459288f9ab8147b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/forgejo": {
+   "hash": "f968806b0362682c4a2d4f6097925fa4e6402a72c9e4175a94a9d539eea757f1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/fortios": {
+   "hash": "ca972c0f40580cf3d8d453fa2019b5931243a5fa9fd9b070b4837c05eb783883",
+   "lastmod": "2026-11-18"
+  },
+  "/product/foundationdb": {
+   "hash": "5ee9a4f7f44ef722a71ebcd6e5f53e18c0d606a2e4d77f7054df47d50187ffc9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/freebsd": {
+   "hash": "d5f4bcbcf32d680226c336d404569643fa9932b1fabfe53b0ec452c8d45d06c7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/freedesktop-sdk": {
+   "hash": "f95502ba5acc9416c9b2dfc5e38e4627d92cd2c199ef1ab750f8cd195665d1a3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gatekeeper": {
+   "hash": "ad55f24ccc5d3b7cfbc946019700957231f16293d3430cbf8e4a08a0e90c150e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/geoserver": {
+   "hash": "aab091658881cc5bc47d531dd763bc3ad9bce6a311dd8890ea469567a7430a48",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gerrit": {
+   "hash": "8bfabf570969d6f438e2a445cfc2d65463435622789256a0bac3853c45b16cd9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ghc": {
+   "hash": "3f6acfc58f4845603a004d7f555edd9e64a302079e18468d1af0a244a64cdad3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/git": {
+   "hash": "35c962b5997dde497b8858fe989a8a735d4a9e6b80f973dce19c5b212575931a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/github-actions-runner-images": {
+   "hash": "e65861da293327711a0cb5061f2cf48f1134829ddf21ba5a22169467a061281b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gitlab": {
+   "hash": "f190547f147d9d563ae3ce7e69a3b8a1a37fa4d7f002ce59b534398765bdd6a3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gitlab-runner": {
+   "hash": "54b4dd9975583584882d63fbe26aab71c72669e817a59ed787f7aed10377d583",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gleam": {
+   "hash": "d160370340983be4c55856a8913212a22541891deaa24ddd39ab4cb0e17d053e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/go": {
+   "hash": "5fcb97083be967afff58054ad22239d6e48020d04898c281708f94c39e43d374",
+   "lastmod": "2026-11-18"
+  },
+  "/product/goaccess": {
+   "hash": "a5242f9708c416c654df556733763967994aee488209a8ccc44184eb4a123969",
+   "lastmod": "2026-11-18"
+  },
+  "/product/godot": {
+   "hash": "2a1581ea37f3c231e2d0e6dbdabbe33c3c3c4250c608635be73009a55653c561",
+   "lastmod": "2026-11-18"
+  },
+  "/product/google-kubernetes-engine": {
+   "hash": "707a3a67d3c186b6ba02b0faf69c85cfc46621ad7c4b0013de88a92828df31f1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/google-nexus": {
+   "hash": "3ea05fc19679c76246d397ad6920e438c09a7524762df5afc81c5d0e9660df75",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gorilla": {
+   "hash": "0c74a715e3c7a5b85818f2e067a7609af0342926af0963038e442900714d5fa6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/graalvm-ce": {
+   "hash": "f6abc3dfe682f11a8ed168576c26124735eda0051ba1f21e694898a175dff2d3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gradle": {
+   "hash": "a2179d01e73bf380140f9e7142962d92672f55f1dd510a9fe06b474af8881c2e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/grafana": {
+   "hash": "a6b90d30e5c6f86deaefa20cb04603a7f07acbfff27db60080bf0f593d29bdc8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/grafana-loki": {
+   "hash": "3bb31f85808050dd59933a5d0c49ac8d13f031a696f7d46f98793a305aa53d30",
+   "lastmod": "2026-11-18"
+  },
+  "/product/grails": {
+   "hash": "905f0bd9a857a7657bb2d2e12298e31e0c7e1a063f13c45e7fd36b9831feeec7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/graylog": {
+   "hash": "10768365bb8060a1fa725f7fbae4918fd558e151de209f9bc88a5be63e14595f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/greenlight": {
+   "hash": "54d1aed230bc87f79fa74ac081f755cabb9d0c544754155eecbe92296beea682",
+   "lastmod": "2026-11-18"
+  },
+  "/product/grumphp": {
+   "hash": "5394f61f014193127e5874bfc61cfb4f536d5ae8b6e62ce8b21af455fc2ee163",
+   "lastmod": "2026-11-18"
+  },
+  "/product/grunt": {
+   "hash": "526059f06e11d3ad9859759e8556e6416f285172005fc19a14f3bb05a5a62b82",
+   "lastmod": "2026-11-18"
+  },
+  "/product/gstreamer": {
+   "hash": "be0165dcda2b1b4a31666343e8a1ad9c106d6694072d77c66eec47d8f840ebf5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/guzzle": {
+   "hash": "862ea72b6222fde5312e37692479ca950e741211439ed3cbd8eba2249c72e8e5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/haproxy": {
+   "hash": "e3355759de02eaecdcc544c0f7a73de4a2bdd44fd4aaf89c2706b002ff182b32",
+   "lastmod": "2026-11-18"
+  },
+  "/product/haproxy-ingress": {
+   "hash": "b468cb5789e48b7d21ad7bbf077463cb6ff772803833cab87db66a28aa6923e3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/harbor": {
+   "hash": "d5abdd4e822df3d2f74da7a47c1d0427e55f539fbe4bad62d9cbca6a99a5a090",
+   "lastmod": "2026-11-18"
+  },
+  "/product/hashicorp-packer": {
+   "hash": "5b49eccd7d80e155db77bc54f105fc616d7768e4ea3db68aadcf7ae6923f8fa9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/hashicorp-vault": {
+   "hash": "d615f1930199d27c26bf1adf0c46b130c041d532a149df637d7f2172d2e202f2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/hbase": {
+   "hash": "e1ddfc528ccd57137f5db5ec9f9c50c7dff5bc56f4440d3c1663b441234b935d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/heroku-postgres": {
+   "hash": "caa5b2b3e33d934ee8cd7fb5424576188f3bd9b37dd2440adbf2d23ba3e1c131",
+   "lastmod": "2026-11-18"
+  },
+  "/product/hibernate-orm": {
+   "hash": "79b6d35d4f7cfd14dc0b4a05a92ae2900a020604da3d15c524a7b17c68c1486a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/horizon": {
+   "hash": "3aa27397d8922c3e70e9f8bd24a04d91ce6a79fac4e88f6efdb8033d279747cb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ibm-aix": {
+   "hash": "323df2d5b6189ad85af4241ea9ead66c661f318a7d3dd072d436b6173e8d5414",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ibm-db2": {
+   "hash": "a84b38ee3fc647a942b39ab51ea3a376b9c4d87b27db371cd0ad95bd65d30883",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ibm-i": {
+   "hash": "197d6ac0fbd23e0cbaab11da1d6bd42523f074579cb60022eed4d5061ded6ecd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ibm-mq": {
+   "hash": "8ec76897fc8ab4775401bbbf6080c0176a00d87b482c785a8d6bc9771a827d35",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ibm-semeru-runtime": {
+   "hash": "ed8b8984a36bf9955583327f35eb543fccc337f6798897c420d22dee8540019c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/icinga": {
+   "hash": "b837607eb63123c6f0258fbff6bc752e86d852cec25942dd7b7c88291403f5db",
+   "lastmod": "2026-11-18"
+  },
+  "/product/icinga-web": {
+   "hash": "a1683943c4ef142259ceacb3b94c6582bc3f022ce48dc69dbf73c4cdf0630abe",
+   "lastmod": "2026-11-18"
+  },
+  "/product/idl": {
+   "hash": "ed4d8d03663928600e743aa564e33f8ecfd3c0611f94697c155aaba1baa6d68d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/influxdb": {
+   "hash": "a165950e00b7da4567c92d389c8f5627f859f05f2752239cc2b1ee92ec417574",
+   "lastmod": "2026-11-18"
+  },
+  "/product/intel-processors": {
+   "hash": "2b6ce9e2871780fe7f26324f7e977f3b59a0963842e5417705ec9fb9239c327b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/internet-explorer": {
+   "hash": "c9226e1839ffb30caab31ccf0ef5d05c459a318ce3d5d1df713d935161bded5c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ionic": {
+   "hash": "f55d55af7aebaec0de0b5eb273c33e4c205a1306d2c289166216e71c332bab6a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ios": {
+   "hash": "e2c13998b9acaf850a6df0584dd8636b0238945314cce8bc10adb0ec7fb38220",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ipad": {
+   "hash": "8438df4d44a08d6e309df7d301534dfcbd54a32ccce6b00e0fbb81bdea1c7413",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ipados": {
+   "hash": "c5b0b84987a4246307a4539f36b9a5fe91b44a1af33b1e7d4fe0dd7b124474d2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/iphone": {
+   "hash": "5929aff60ecc426a0eafdc1a21805eb1e3ee39d4dfb577690d199692f08fb84e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/isc-dhcp": {
+   "hash": "fb9d93f493874bc328fa82ac75d5846d5732371f57759b7a0f3ebb48c950e351",
+   "lastmod": "2026-11-18"
+  },
+  "/product/istio": {
+   "hash": "ce49975eeca0b0ffca41219c34182a87d8f01fe4d820f502eb38c0690da1c1d1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jaeger": {
+   "hash": "d04527c97112c2bd8f9dcfa95f392f9063db79a67a45d0ee62abe28c06b12a48",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jekyll": {
+   "hash": "33e0d5b4bf5f71c2e1e8283e677a2f38d305ebae831bf882ad323c82d2746a69",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jenkins": {
+   "hash": "6cbfc6cfecb75a3cfe8e11a79d4249d0081a34733bef9452f32a7b6fdd633a35",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jfrog-xray": {
+   "hash": "6ac3a1371986bd30394282343e1d02b3a2e8736a7a351b2f47352b0d4bc5b488",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jhipster": {
+   "hash": "8ef7f2ecf705322b64e1cc81dfbeab0afd4cd3f1ad7f6c48cd504b5f51fdef23",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jira-service-management": {
+   "hash": "21a895d1710e690b37452e1808a7404573583acd75bce22545fce9ed3206591a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jira-software": {
+   "hash": "1eeab504c19ed3258c8469252e98f9f0e8a680ebe1a093d90b59906f6ae6e596",
+   "lastmod": "2026-11-18"
+  },
+  "/product/joomla": {
+   "hash": "d7052386220c30f47d040c91b86f83b45246709c1f4baa406fb892e91a30e74f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jquery": {
+   "hash": "baef8e3d58f630ed3dd6a529f12f65bda9d869e64089ef2a675a5f4fecf0d94f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jquery-ui": {
+   "hash": "fa4136f448b6b701e52a216cbcab3224fc2d2a47357312ea4ef6ee37c0b1519f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jreleaser": {
+   "hash": "0fa60e6447881b040c5042115ca8f7675d54054667c3c7096380701f3e932eb3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/jruby": {
+   "hash": "d8e9b19cc362f03b8c8f250f5d84a204485fb556ce3a361f75ec8aceca881b64",
+   "lastmod": "2026-11-18"
+  },
+  "/product/julia": {
+   "hash": "c196bf8b3dbd11b3a83ee858667fbf8c3f16f7f998662a111b0ade5490c78098",
+   "lastmod": "2026-11-18"
+  },
+  "/product/karpenter": {
+   "hash": "13b516d62511927514b94a1732fc9b1227702382211e413cdbdeca4ffb85fc6b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kde-plasma": {
+   "hash": "73be5ed0da169f50c83ccc0fea65367d4c8e2bb12a58d84e63c5c6503c97f8f3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/keda": {
+   "hash": "ccc1ae0dfaa4aed08f518b409764e6060d174c3647eae9f7709dec4188195adb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/keycloak": {
+   "hash": "6072063ef0933c4905d27f1f78a99c41d34db3f2a8bf96ec5e0b311d2ddfbfbf",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kiali": {
+   "hash": "9e3eb4965ddaa8aae71df13c4f0d7313c3cdacbf168bedb6846ae867ff294d10",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kibana": {
+   "hash": "6e3ddf198211319468601a476b5cab05f1fba9db3f6023ccf4bd52315780777b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kindle": {
+   "hash": "29291abbd2b30e19d955e292c9a60cdd23de5050b34aade474b1d1c6dee5e423",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kirby": {
+   "hash": "9f4907c4c7d419d54081a8f801abdb564f839685bfe4da57b4b6d8dde5014de9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/knative": {
+   "hash": "ab828ce1b02e8cfbb43af3db6bf9c45ebc52694781771d695f4657585957b06a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kong-gateway": {
+   "hash": "51c9d06a468e4e88edb3d3e7ecb6ac4ac8a7ca037011ddd280e87c24cdd0559d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kotlin": {
+   "hash": "ec54435973026c206816afdcbd45154807e01876c7161cb1ee693bc23c7decf5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kubernetes": {
+   "hash": "751b669350fb57332cdf0adc1e46c0f343ab9c95fc99b041cdf3de540376c7c0",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kubernetes-csi-node-driver-registrar": {
+   "hash": "17327d5becac71f358c013fef85fd2c28d976f351dc2a9b9eca5c124c031a7ae",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kubernetes-node-feature-discovery": {
+   "hash": "fefb0dad934da9c508262fcc6f06a7d8fbfd1ebac53f278c7d080edb0bf0f149",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kuma": {
+   "hash": "bbb82bc4556daad3a7c7631cb46390559b613d6a93c15d4b166419ed388b5f17",
+   "lastmod": "2026-11-18"
+  },
+  "/product/kyverno": {
+   "hash": "3fd938431415173bcc5dd0a0dfe6eb4d29455a3c6019f94c266ac34b7ee55b7a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/laravel": {
+   "hash": "39e84e03beeecd61d9d34c8acdc529456aa4e655702f9d85b9b8d925e8944bcb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ldap-account-manager": {
+   "hash": "12f7b31299e0b62a31d2781d3f4090281e6964de7aaf8f38f239a17ee052a593",
+   "lastmod": "2026-11-18"
+  },
+  "/product/libreoffice": {
+   "hash": "00595e713312e338a4a1ce9ccf67f3e73e41a5b6fb59d40e622c5d22202715d7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/lineageos": {
+   "hash": "a6832c50d3fc362567e1e1665cc66abf4c4e25fbb7c06e19ffc9370036fdc55c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/linux": {
+   "hash": "6533daf951bc30a8b1dbd221300c7f2a307dd8c2ee4072f49a932e110181c62e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/linuxmint": {
+   "hash": "1147e6361e60e31451b270c4ade3f951d2a82ff5b1bc599bdc9bd4173d12b256",
+   "lastmod": "2026-11-18"
+  },
+  "/product/liquibase": {
+   "hash": "e306a349ea4d6ff61fa9e5f0d008ddf689c5c3a204f1ce8e36832c61ea274792",
+   "lastmod": "2026-11-18"
+  },
+  "/product/liquibase-secure": {
+   "hash": "54099d839f9409a017117ab01e759b798dfb6dd4802aebf82b38f5e42155a6ec",
+   "lastmod": "2026-11-18"
+  },
+  "/product/livewire": {
+   "hash": "6fa254c881e0d35cd75f719d2238bec185d59f93e0e3df4f84f2eae3a3d6ba3c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/log4j": {
+   "hash": "277e78e767ab8abebc61146f3780777c274729766697d501cd296a82b12a93d9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/logstash": {
+   "hash": "50a64bf5d2fdd88c89177b9886a405d82343dcf345b8825e8272b480e662bc83",
+   "lastmod": "2026-11-18"
+  },
+  "/product/longhorn": {
+   "hash": "ba176f574603aa40137c42cede8dcb3daaae4a0cd59d6e6ab3d1f6883ca72c50",
+   "lastmod": "2026-11-18"
+  },
+  "/product/looker": {
+   "hash": "18ed8a1963af351bafb3c45c3c15571d702306645aec4658f6b7358c4ce06afe",
+   "lastmod": "2026-11-18"
+  },
+  "/product/lua": {
+   "hash": "07add65d934fc55de269ac8eaeee4146e9f376844291ff894f285dde611454fa",
+   "lastmod": "2026-11-18"
+  },
+  "/product/macos": {
+   "hash": "1c5a4809a862bd7b8e791f528a1a3f9c05e218fcc89f2ee68b729965da2c1b29",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mageia": {
+   "hash": "32365b9ddb82a673d81a04b3bdd8314b012370fc4442facf24f02e4e97598d8d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/magento": {
+   "hash": "cbd55893fed35d8c7ae9fed1ae649108ddc65aa1d6f0476fd879a102247377c2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mandrel": {
+   "hash": "4431a66a647a1a0a8c2e9893498427b16b159fb4eb8d2b983c3c133132706b26",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mariadb": {
+   "hash": "ca9e6c1ba025663807b2ce21779cf5d9480636b68a8f3de21751b685e275c3ac",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mastodon": {
+   "hash": "d2383b56047607548a4c266ebc53c433e771cb780953ba69fd9a386cc2c79f6b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/matomo": {
+   "hash": "84d0799abefa6469bfca1455ad90bc231b67e53e6f13e65c28cd36900e73b25b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mattermost": {
+   "hash": "efb4c1ede24ea24fee4e7ce07ab8b56e0c3887403e3b9a89e56cf68e2c60bb66",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mautic": {
+   "hash": "146d5661035ede552d40a105302d0c9ab2b59e9b2ff71dafe944ec7846c463a8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mediawiki": {
+   "hash": "7c5d67a4195ed394c4079c36186ad4d1ee1f459631bbc6f85dc33d2eb432397e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/meilisearch": {
+   "hash": "ecef4f1352fc42d152142ee9496859781d8287d7903650bd12d8f9527c1e45cd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/memcached": {
+   "hash": "71cc4011b3f221e4f7803c87c8b0b1fb56bd0ee5f01bffdfc6b439006a55d37f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/metabase": {
+   "hash": "ed2910a5c61493e7a9b43701de2efb4e2bbe140d05d4b2e70d94bfd917b47b89",
+   "lastmod": "2026-11-18"
+  },
+  "/product/metallb": {
+   "hash": "dd884ce84206d1b4544d19d65f03588bc331fe697bd8cdb5b16e2bcfa93544bd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/micronaut": {
+   "hash": "5b91c471f15d52e831345536118ca2cd6de6d30e1a245691ec474cd3cf9f2c93",
+   "lastmod": "2026-11-18"
+  },
+  "/product/microsoft-build-of-openjdk": {
+   "hash": "2c9a179ccbf8c53a8cbf40d76529d6cafd4c18fb8eb1b60a8daa258a497a7262",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mongodb": {
+   "hash": "93f366ec80c2d3529005d976a8a188a53089de2992de146a3e54acea7c428c6f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/moodle": {
+   "hash": "e873f5366660656fe6aa133dc5aaf78597843f25ce1b343018679a7ed3e24487",
+   "lastmod": "2026-11-18"
+  },
+  "/product/motorola-mobility": {
+   "hash": "7abd88a61dbe1fee39b3b0801b7f09c4699b22c6f631c669cb1fb1c052920147",
+   "lastmod": "2026-11-18"
+  },
+  "/product/msexchange": {
+   "hash": "18701c8a51ca8839b40f574ac8e0a023efcb091ac7984e8642566f30dc71e67b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mssqlserver": {
+   "hash": "ec513cde5d073259ac626f0a53c011f0ca55b816949585e961502822eacb9fc0",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mulesoft-runtime": {
+   "hash": "787e4e8ac6e4970e31753d18408b798c1d8a65b1bb92061f741ee107551584de",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mxlinux": {
+   "hash": "31137c58d6dbf09d2c2ba2c1bcfd3ff664f7dd7771bc42864ecf5b991902820c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/mysql": {
+   "hash": "973b6c35be8a7c654ec9b3f384453b207fdbf5f0d672b0227a4e0692f2402715",
+   "lastmod": "2026-11-18"
+  },
+  "/product/neo4j": {
+   "hash": "a1d784e94b02f49de68944d5070611e6cb62cc4dd41e380dc949355e213695c6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/neos": {
+   "hash": "b361ab54d973563b32f9c6383952ca114fd6d6449506b4bb6c05977a6d3564c7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nestjs": {
+   "hash": "6c4093f87ee4873ab80641c08ee6d0ac34afb622c53d889497bbfe57e1a28b5b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/netapp-ontap": {
+   "hash": "bda0bd0faeafae228f8c1d89b5ec4c8266241f723757eb18280fe0f67bc9b8e8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/netbackup-appliance-os": {
+   "hash": "f30e1bf65e89c15316d15820ff5887268935b233fd21ab93773352fc96092061",
+   "lastmod": "2026-11-18"
+  },
+  "/product/netbsd": {
+   "hash": "dac0120086dca26205e97faa2579cd798c13b53c534b3b45987494dad894205c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nextcloud": {
+   "hash": "33d0462c9dc4d6679aeb38a21744a876c07550e1461ae363932aafca16726084",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nextjs": {
+   "hash": "9c93a86e887cb968ca275c26fe4a66efb9b8765183455025e4d812ce81f13d5d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nexus": {
+   "hash": "c823506ea2216b18f0d9eb07ca3a0047cbda280bb22bba277993869854f68a85",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nginx": {
+   "hash": "8ae53752bf365839a15b086b1525e950035af9b1dc808f158d9df43885dcc71f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nix": {
+   "hash": "5a2ebe7bcfb649912efe91ca713b8024add218f16f6bae19adc4c7ecdf8f74fa",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nixos": {
+   "hash": "e4e95ec74fd4a0428e958c3d8800f5db0a0de7494d2fb31c5661ed10a723c935",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nodejs": {
+   "hash": "b9eba3b1c9da869369edcc4524b33e5393aaceaa394f8dcd5e314106e031453b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nokia": {
+   "hash": "ab531e8949254c9183b6be00cb217f1674b81a37b783ad6ccb41a9c9f16c386d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nomad": {
+   "hash": "1ccf2dd12003574859e768172dd80d18915f0ce42d81f8e4727076d027215dea",
+   "lastmod": "2026-11-18"
+  },
+  "/product/notepad-plus-plus": {
+   "hash": "9ca1d81e813748ad95fd8d98544beff43d3f0372524a5f9ed4264ed310eb8999",
+   "lastmod": "2026-11-18"
+  },
+  "/product/numpy": {
+   "hash": "54e0ff75ddfc3ed03c10e3cb08cd7e8db2e6938b2f01bef1ea3bb76fafda76fb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nura": {
+   "hash": "3b58ab4a76a5191b4c63d127214b410e3ce77833ebaa7dbcbc2ba4ac5a3ad153",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nutanix-aos": {
+   "hash": "0c1e6df7093fb5ed4268610dd28ea5baff33576ac3285e4f2f9013a25096344c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nutanix-files": {
+   "hash": "915ea007894e46958f097e7e5699b425c6d67a02ab7751b8f79d2202d9c3d620",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nutanix-prism": {
+   "hash": "0d86d4b415ac2aa39dc08f4f80e55daa826f23c4ac8e92173320590f890ca6c3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nuxt": {
+   "hash": "43102e6164fee4eaea2d765f4173597f9c93d90addedd24e3d12aa39b2b156dd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nvidia": {
+   "hash": "5bb997ee4bb7d2e053b5b7583ab8ff540be0dc2bdec5a0d6ae510206315117ff",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nvidia-gpu": {
+   "hash": "c4c2d093e8a79d7eb38d9965e4c37b1791763f5dff0787372f5d847f5a154673",
+   "lastmod": "2026-11-18"
+  },
+  "/product/nvm": {
+   "hash": "2723e8e40ba29115fb859aeb38d36667e2b95548a043447c55262de7603e7985",
+   "lastmod": "2026-11-18"
+  },
+  "/product/office": {
+   "hash": "e1e5985e6baae505a46bc0aeb88d3d794a3cc42344283af047881201b40b9444",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oneplus": {
+   "hash": "8f82ccdb5fd9d867b0ac136dedee28cc4ec27712310006274b41634927dfad2e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oniguruma": {
+   "hash": "51bebbaca178f5d7fce33e64878402376d28099077fd58c34bf6376b8588fd20",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openai-api-models": {
+   "hash": "e5f71cf24ba5684fce5f5041a7f92a281b348174422dc09a809477d9ea1a7e81",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openbao": {
+   "hash": "056448ea8138d28fff8ca7e625e37ed364790c32540631c12fc09eda40112112",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openbsd": {
+   "hash": "226e373b0714a47413cb5c18f0533a972897bf8a250bb63a0ecff2eacd696c8d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openjdk-builds-from-oracle": {
+   "hash": "f31e005e3038bef60a75d7a2a320ff011cf5392a784781a1d4f4ed191d987301",
+   "lastmod": "2026-11-18"
+  },
+  "/product/opensearch": {
+   "hash": "89d881d10ef0263c702cf5004d8c0415d3ccfe7afa3e12ae0bd3dc0bcc487e4c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openssl": {
+   "hash": "2f537620a69383be24e68452c60457a116efca1632e441f2c95e49fb2a7e235a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/opensuse": {
+   "hash": "394c21a01229a5234247ca212d43d4564d3286a958ba31f62474301a81fd4696",
+   "lastmod": "2026-11-18"
+  },
+  "/product/opentofu": {
+   "hash": "c3ecdf2755d33d528c51f1190e0f9a4f97e5e609d485ec3408533d7234a9c05c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openvpn": {
+   "hash": "0206f5766ef598eb9fd28435abed126af66d7dbfab3c51df339083b2826001a1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openwrt": {
+   "hash": "a671d559754a0f86b949eef2323b4f5219834d3495e18ba7263293332a735032",
+   "lastmod": "2026-11-18"
+  },
+  "/product/openzfs": {
+   "hash": "467dd30bda9197c40e00eda83c6ea332d76badc85bca4d5593077a6dd19ec6c6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/opnsense": {
+   "hash": "05861e4e313f27f767d44ceea5ebf39cedfa7fed58bc0b4c9b9701baf60bd7ea",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oracle-apex": {
+   "hash": "0325f0c5739bfc96587d0ace2237606060db1435f3019275fcf0773fbb92be70",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oracle-database": {
+   "hash": "1f8e68beb65dae1ec0ac58afd06197bee80b056123d913f4c1bda18a0a91326d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oracle-graalvm": {
+   "hash": "35ad13f1bfdbf055585fbf0234346f57f3c9043c49bf89d1b43cab1c8011fa9c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oracle-jdk": {
+   "hash": "1f58fcc169fe8396b2f200f9dc3bb139e92b05e26d0bbeaba90cb06456872739",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oracle-linux": {
+   "hash": "3ee8922db39b24b7f6389eb2999c106df3517c4783b6d2d2e2f3e814adbbd387",
+   "lastmod": "2026-11-18"
+  },
+  "/product/oracle-solaris": {
+   "hash": "ed56f2377c5e2dfdb1752c0ca9b55afc23b8210aeecb8acb589d71aa952fb420",
+   "lastmod": "2026-11-18"
+  },
+  "/product/otobo": {
+   "hash": "e2520773993bc84d64f4f02bde90dfd869b8d85d8ad89d47b54cab40822450b8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ovirt": {
+   "hash": "77765de3fcb8dc5a390658c0bc6409cc0a8abfdff51f5eb1f957578c279ef781",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pangp": {
+   "hash": "9af45a897e40300ca8036bba067ee39da930fa9aaf14b47fb3fcd0676183732a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/panos": {
+   "hash": "9f16e8c8aa5e41c627ddd387949a1742d8b0a221eaa55a1e3757274278cf6e16",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pci-dss": {
+   "hash": "5d82dafa373c7d600473e1d5e49f9aa7f7cfa866b8ca4819cb82a890d088e1d2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/perl": {
+   "hash": "6aa7d59058845355787a0ee8a8ef8443ef2558a925e605e3336a23acc014289f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pgadmin": {
+   "hash": "7f5256e16606aede0706714f39445bffb4d1ba86836fae78616038d99d329816",
+   "lastmod": "2026-11-18"
+  },
+  "/product/phoenix-framework": {
+   "hash": "20b841f7c62ea8f06a92dfb7035f2fccebd1a778c3e980936a1290cf96fa5986",
+   "lastmod": "2026-11-18"
+  },
+  "/product/photon": {
+   "hash": "dd72a5d59a279afe738b22a7a88b46b9177a8d2346dbfbcd586a32e497bdadda",
+   "lastmod": "2026-11-18"
+  },
+  "/product/php": {
+   "hash": "b14af6a75b50c3d02b9d917f2bd24e28cbeaee85201214304a09643c60749b30",
+   "lastmod": "2026-11-18"
+  },
+  "/product/phpbb": {
+   "hash": "fd62ee6ce3191eaf6417eb5f33d41d79852951d5790390fc8a5ff3fc7c4fdc82",
+   "lastmod": "2026-11-18"
+  },
+  "/product/phpmyadmin": {
+   "hash": "1997731a493dab94d06b70bfd75d53b8acb7c0d556608ecac98bda2f4ad266bb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pigeonhole": {
+   "hash": "58e2490ba1f2022d089a7532dae3d0c436daaaa37ef4e576b4a3cb32c4d0d7d9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pixel": {
+   "hash": "8d4f073fb948fe49de67bf2941a7d27c158a5a0060c054a5febee6938238ff8e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pixel-watch": {
+   "hash": "9642be00ed4d8ed0689b8b4d8c4bf5f1fab89c680bd8a32d443cfeafa26aeb87",
+   "lastmod": "2026-11-18"
+  },
+  "/product/plesk": {
+   "hash": "da13b3ece04981850aa015f6fa4d818618e48bb12f97758c956958005077a7a4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/plone": {
+   "hash": "cb2005fdd48f81a6d1a7a64c7ddbc24da4607a4ba144fe20f2c5eb1d4f0ffddd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pnpm": {
+   "hash": "e80dbfa97882067bba9d9d9e52bd90d7eabddeb6f1b5ca52a60cac85b16fe85a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/podman": {
+   "hash": "03d02fdface1df22566e80312c704c60467bb632a8958acbce172684b4c7eb43",
+   "lastmod": "2026-11-18"
+  },
+  "/product/pop-os": {
+   "hash": "1818d37d0a78dcd1b3551f33b8ce04850f2e83b18f2f9e900cff76094ad309e1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/postfix": {
+   "hash": "6052c88d9ef9ab190930c9d9666f3620005186521ab8fd322b00a00a621a46e7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/postgresql": {
+   "hash": "706ea7a3543e930c90c38d9a70ed41310224ac57835e0541d28b9e6f12005401",
+   "lastmod": "2026-11-18"
+  },
+  "/product/postmarketos": {
+   "hash": "d1959375165686ebfc168dc2cca79178c5bb892f494f7524b2c8e02faa86b5b3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/powershell": {
+   "hash": "a79fe255d6e845cbb745b0d22758062e2b2c01ac479762a2e2e42e4332d7608e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/privatebin": {
+   "hash": "22c5d24d3c407ea241736eb5d05985aae65430e255907482530b1b3afdfe1ca3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/proftpd": {
+   "hash": "a56b1f41274dd824b22379d9c84b63413ecbee229463ecaed0fa1f299b508fac",
+   "lastmod": "2026-11-18"
+  },
+  "/product/prometheus": {
+   "hash": "8931b9a13c0caf679c0250d034613aaeae692a34027817d7c95ec84bf68e1e29",
+   "lastmod": "2026-11-18"
+  },
+  "/product/protractor": {
+   "hash": "2468bc0fbd5939ac199974b3ad917fd555f30fa98df445f9256d9ad909ebfb92",
+   "lastmod": "2026-11-18"
+  },
+  "/product/proxmox-backup-server": {
+   "hash": "e5af5e4e535aae44ad8f8e50a27c6406801f0b589b3876c1b79a26605ad38ddd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/proxmox-datacenter-manager": {
+   "hash": "48a749a34fb4314e2ebc60043fad2257e14c7cb73dd12b4f13e6c514fff642c1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/proxmox-mail-gateway": {
+   "hash": "4ce73cf0b0108c786367283e9a76be29b30251a1672876caf2176252f0b74a75",
+   "lastmod": "2026-11-18"
+  },
+  "/product/proxmox-ve": {
+   "hash": "bd23d4d9435fc46fc92f33d9ff1a45d70154595054383d638c98270a89aa1841",
+   "lastmod": "2026-11-18"
+  },
+  "/product/puppet": {
+   "hash": "f4e3d2f251ee1755c5be1581dc1f645cfc5b95c9cc0f264f6f3488c12af31a5f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/python": {
+   "hash": "5ee4063fbb7e20231b687cccb43b7584609908c9afdb5afba1e436b707699408",
+   "lastmod": "2026-11-18"
+  },
+  "/product/qt": {
+   "hash": "d449e162d7c231ebdc259a5453231fb4e7ab54a7e732b795672a82267707b2f9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/quarkus-framework": {
+   "hash": "2ab4cb43bb799dc63039d5b934db3701e89b903c355feb4c335901e27dd5ddf0",
+   "lastmod": "2026-11-18"
+  },
+  "/product/quasar": {
+   "hash": "057acaff184d591bc4be30a4b36cfd663812e7b256ea7a85bdb469aa7432f700",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rabbitmq": {
+   "hash": "9d144f13294cb914d2ae06c2f7665cc46823827572224852eec9915dccb4f019",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rails": {
+   "hash": "bba6caaed56e3782234aa7ddf950f99940bde5964d4119a9a57c014a3d15498f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rancher": {
+   "hash": "0a69d008429e0880fb35f22d238a33e07f6fa2a44ea37901d7ddfa013e901131",
+   "lastmod": "2026-11-18"
+  },
+  "/product/raspberry-pi": {
+   "hash": "c61494c7fcb10d60e271a83e061ca5daf8d558e4c3f1ee1beea56cc421442bba",
+   "lastmod": "2026-11-18"
+  },
+  "/product/react": {
+   "hash": "defdf96052bb92f9c17edb3345dcdafcbefc888638d3ba8c4771d81fbeb06a82",
+   "lastmod": "2026-11-18"
+  },
+  "/product/react-native": {
+   "hash": "1fbc84cff01719efa30b7c961cc2627520d8318a45ffd5e2bd88b22480e1c685",
+   "lastmod": "2026-11-18"
+  },
+  "/product/red-hat-ansible-automation-platform": {
+   "hash": "da407f9fc54b97fb7e1024f444896f79718c1f9bbe3a71902816563b986febf5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/red-hat-openshift": {
+   "hash": "b513a5a4f3acf4ad497982efcac266bec06fd436267670a6e06121c3dfa1d89c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/redhat-build-of-openjdk": {
+   "hash": "6c7556a99ff5e889869d57b236f639b09efe8602a7db35e70d4cad0a36946848",
+   "lastmod": "2026-11-18"
+  },
+  "/product/redhat-jboss-eap": {
+   "hash": "b143fd4526a29b38605c962b11ffa96a1f3f959493e1a55c96a55086c50470ed",
+   "lastmod": "2026-11-18"
+  },
+  "/product/redhat-satellite": {
+   "hash": "ed0db1898b8bda10e6b88eeb20de3ba11e831758b4ee9d82ea72bc420a73ffdc",
+   "lastmod": "2026-11-18"
+  },
+  "/product/redis": {
+   "hash": "a13d8aab282cf545bf45b07312f4b8335dbfadacc5b743ec0d1c31302e179b73",
+   "lastmod": "2026-11-18"
+  },
+  "/product/redmine": {
+   "hash": "99b143ca6b72f0d3d1c57b0ef871572ecdc99aaa7dc2a0bd6891d798ecb5f0e6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/renovate": {
+   "hash": "415b28f1b48dc7b5ec12693326f1afe38568ecbb929e3d88a8e1fff90c6dbbca",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rhel": {
+   "hash": "fb6217ed10d3dc1e88e3aaa27d79801624d2bcf96949c690d0a00b9c4b7931b8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/robo": {
+   "hash": "0b42c90cbedc533cd0e24589b507f57b3de413ddca86d22e498b7e5c016d810c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rocket-chat": {
+   "hash": "907fea88b979dde0f7d59be3ae3d291450bb92ced3e812e7a90dfc2592de3f9c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rocky-linux": {
+   "hash": "3783b6fbabd66f55e1930668f4f41396cc84a56dc1373b98df3276c8cdaa5371",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ros": {
+   "hash": "fbf105cfcd9e38cd05ba1de8b81bd091f7dae143d39daeab719cb5c891562961",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ros-2": {
+   "hash": "71b29aba5492aaf446c9a79238388390b676240acdaabd04f87adffe954c69e2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/roundcube": {
+   "hash": "e5e5cdcd942b18a34461f8705796bc1bfe60429aa2107835bcd111a24536aa0b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/routeros": {
+   "hash": "090e2b05c7f1d681247f52ccd87beb931d02fd32002aa290ada2c2d4e5c53c29",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rtpengine": {
+   "hash": "3a5804ee466b045d5203fa640c1e65001c4f20395a14d18ceace97ab96c86841",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ruby": {
+   "hash": "f179ebbfe981fea4765b2bb9067294ac2b91a059c48dd302f043823b80c1b7be",
+   "lastmod": "2026-11-18"
+  },
+  "/product/rust": {
+   "hash": "18d50c5dd63e9cadca86271b7dd864422ab317ca820459e562b1a9fa874c7527",
+   "lastmod": "2026-11-18"
+  },
+  "/product/salt": {
+   "hash": "853535162207430947c1c37b83414cc4002cff0a581109d193c96e9ddbc3501d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/samba": {
+   "hash": "7e52b2f836985b3e8681a1704421b0080704eda715daf6a2a199d45856052974",
+   "lastmod": "2026-11-18"
+  },
+  "/product/samsung-galaxy-tab": {
+   "hash": "00039cd35dbf0c0acb559c23710c0e9313393618ba0a90f5b8ea89175a5258c1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/samsung-galaxy-watch": {
+   "hash": "021bae4b34d6b70dced3d4113328251603fe35936648157298fa982e85c3b3c5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/samsung-mobile": {
+   "hash": "721ec4a4343a786f4daa608d73a09f15e21b35541691053a45786a202b61e111",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sapmachine": {
+   "hash": "260599a73a0987bac89e540e224f60277544cd306a302219b25b4d9efcf7c5af",
+   "lastmod": "2026-11-18"
+  },
+  "/product/scala": {
+   "hash": "79a1236904c5306fa940e2bc0249df74053a79acb70174363ac84c9c017e05dc",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sharepoint": {
+   "hash": "4943bbde2651ffe6487a6ccab29b7e6f8efbba850496d74d771425f94ad2e25f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/shopware": {
+   "hash": "432f2498e627f27f298785e47e157a4dd85e22faf6ba5dfa9a03e8a9299e137b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/silverstripe": {
+   "hash": "04b6a73ba311ea30ef2d050909a6b3b35d846c40857f30f2083a5e5ad0567c96",
+   "lastmod": "2026-11-18"
+  },
+  "/product/slackware": {
+   "hash": "ae858e7cf53b461068bfaa78097fb76e99dc1133b7b82327838bf5d7c96f0884",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sles": {
+   "hash": "fbc30ea5f5acc484c61a9b0e471fe729dd4b1613600ab17c37df746737e05c90",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sns-firmware": {
+   "hash": "68e96ac623b07585d5086f6cef5719dfacadb7f276241539cbbf1321d104a501",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sns-hardware": {
+   "hash": "7b148bc319a78f27a923fb0343efc4b903db18d769f3b80842d2f34d5c4e1f9d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sns-smc": {
+   "hash": "a72a0eef386c72e2c20dcd4652de8be18eca0d37eabf4a38894da5df02261968",
+   "lastmod": "2026-11-18"
+  },
+  "/product/solr": {
+   "hash": "64909e2892d97d63949074f5d0a453a226eba73f8fa3789479f527e3ca6d38e5",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sonarqube-community": {
+   "hash": "29d938aa42dee8d29bcbb27b8c4e47ee230fc597d8700fdf5ba8722698a2c8f9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sonarqube-server": {
+   "hash": "67af28d889fa209b18d7f48e9e2e3d3305dc9b16b1901b2ebbbc3f34cb90c7cd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sony-xperia": {
+   "hash": "0d514cf5c70f867b9f1273550289190f3b8bffa95c53a4e883dbbf0e385d3e86",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sourcegraph": {
+   "hash": "ae79b88ef5c51bef570eb6601d1f8be759dc409ebdd2cd8fd89a3fca1d10434e",
+   "lastmod": "2026-11-18"
+  },
+  "/product/splunk": {
+   "hash": "3a888892a4335905178a91eacfdcd0328703403a846eb17b08845f6ef96df2ee",
+   "lastmod": "2026-11-18"
+  },
+  "/product/spring-boot": {
+   "hash": "1ca6486ad007bc5ac496dd24796f5e9d0e9e813e9e36a31d3d82df27d1c5e85a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/spring-cloud": {
+   "hash": "7031336b8a947f3ae4b82c4105802bc2a3695fbd18e378dfb1a1f96caef57ef9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/spring-framework": {
+   "hash": "be785952faf6529511bcef4fd16ea5d3f207055c125e34078d8c427ed410a514",
+   "lastmod": "2026-11-18"
+  },
+  "/product/spring-security": {
+   "hash": "15f402ae23ef197b14ba9b670f8c89b02223dea5f7a378e11bc0c0ea653a6516",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sqlite": {
+   "hash": "b755360db1e5a6f8c5fec77802686008971316e098f72eac8174fab44b387a0a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/squid": {
+   "hash": "9c75302dbe9898e8ee738545cc922eeaa6f1e869c005e91037461ad7f409bed7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/statamic": {
+   "hash": "99cb90ac20791121315335ff6ba64ec47ad03e211914c7db206ebc360f05419a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/steamos": {
+   "hash": "28ec3cda634877eee520cf9db5c53f7caa4037bd148b5998e7f597bc9b5f383c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/strapi": {
+   "hash": "43881591a6af5cc6100c75cb4916fcb4cce64a9c98e6937ad7e01e0e87556720",
+   "lastmod": "2026-11-18"
+  },
+  "/product/surface": {
+   "hash": "0a58465faf0c30988a0c35137b5ed8c08b37709b11cfc98f407d44c0201b4f24",
+   "lastmod": "2026-11-18"
+  },
+  "/product/suse-linux-micro": {
+   "hash": "59e1dea74796250d4b9f6a1fb9efe5209f65eeb63d6b76f1b7863edd6e55e371",
+   "lastmod": "2026-11-18"
+  },
+  "/product/suse-manager": {
+   "hash": "2baac5103af041cfe96c482dde6072113207cf917e58419ae0e7aa383e5a6c51",
+   "lastmod": "2026-11-18"
+  },
+  "/product/svelte": {
+   "hash": "abe9e50773ef9b19449618bfa5844d92c3b73cc9b2b1a42fc1b2d51c23b628ee",
+   "lastmod": "2026-11-18"
+  },
+  "/product/sylius": {
+   "hash": "a77c13fc4e12301b7af9fd614b292d37770d6a5627f177f5f9ce2392a5d098bb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/symfony": {
+   "hash": "f8ac9d9a861568c11ce85fb7bda9888b7c647277d2dbcaed229b6e8d192648b6",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tails": {
+   "hash": "4f88fcca9bbc775cc97a1c48c049c3845a866e623cf7b50d25087cb7496f4f6c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tailwind-css": {
+   "hash": "239bfff6652b3a099f747669e859182ef60c41f3583f3f4b643a9b52b6856f1b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tarantool": {
+   "hash": "7051fa8cfc7e361b5733e84611c11904841a7e2b8e10ed39ebf379949e59b79a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tarteaucitron": {
+   "hash": "ca28637d4b94bcea972be536c80a53b499fa77191d90b1e1ad2efcce652e4716",
+   "lastmod": "2026-11-18"
+  },
+  "/product/telegraf": {
+   "hash": "90269d937a7193da4d047a5a9014db12bd6a05ee84080f0eb4e88cfc5776d8fb",
+   "lastmod": "2026-11-18"
+  },
+  "/product/teleport": {
+   "hash": "b56061300de55536898c5e1454996596579695adbca23872dcb2d1ba5e5f0d1f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/terraform": {
+   "hash": "2ad65989cf0997595ad05e5b31b23327f0b9a6e0851c2e07ed160dd2a2bc0932",
+   "lastmod": "2026-11-18"
+  },
+  "/product/thumbor": {
+   "hash": "6e18eaae3f1d86037be198203bbef74ac2a210dfe6c1f0ac4ce43e40c9b961bd",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tls": {
+   "hash": "00942844f31ab5326666aa9afcd21a996bc7caf48b5fa8fef3be10284f5e29e7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tomcat": {
+   "hash": "bc0d9ec9b37e77b9acfba64cdc3fb85b52509843ae59ff9c57010bf8b7324ff4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/traefik": {
+   "hash": "3b36f577e619767fc83a6a714dfc58cdc76b35ab6182b528be7b61b0f5b62e5c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/truenas": {
+   "hash": "23be0f6a397b3c43c1b61883699c567928297caac9114f163fe147a46193e2a3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/tvos": {
+   "hash": "cb96831d65a1b41469c55a4d0ba4ddca447e25de5e110ef004cb93dae5e2c37c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/twig": {
+   "hash": "1d0e6509346cf1ec4d097a00cd3f3374f00dc26ea967bcbe2281a80108f9b8c4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/typo3": {
+   "hash": "a52eed84101ac6d6f58e9df277a656de8175082c9f0fe5c27a19971c7e6455e7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/ubuntu": {
+   "hash": "ae27c32795037ff320198aee1aef3ede124b0974e9be3bcbd6211ff87db5fa13",
+   "lastmod": "2026-11-18"
+  },
+  "/product/umbraco": {
+   "hash": "e4db8b210efe80e892c108ea66511947cc139ee5dfbe9b4bb9b562d2fa462d8d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/unity": {
+   "hash": "164b2bd3b736afb9da90e0fe953b6646f768fc0dcbc30fc8ef06895226ee8818",
+   "lastmod": "2026-11-18"
+  },
+  "/product/unrealircd": {
+   "hash": "bee60b868953ef3e659d31e1b99f3a943a753081dbb0b29d024232c47b32bba2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/valkey": {
+   "hash": "86fcad460568e7b92daf66228e086b68f36e5ca1981e84fa13614b08b0e2ab24",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vcenter": {
+   "hash": "15705814973981f20334a860429d7c5ec0e98f23daf7a102ec6beb15df2152c3",
+   "lastmod": "2026-11-18"
+  },
+  "/product/veeam-backup-and-replication": {
+   "hash": "e2df44d72bf1bf0a69d3631660a2c1b9499b0ad1a391d85dc5594202119333a7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/veeam-backup-for-microsoft-365": {
+   "hash": "8d8e05f3a3a21870b650d425c666ae187977821efe52b291e99b318f79f40ea1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/veeam-one": {
+   "hash": "f32e880fbae9853e7af0c0fcad427a51933ad48cd772476ec9655a66e96675a7",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vinyl-cache": {
+   "hash": "213b662cb37742085e69acbafded0fb9be5a3ca20e220aa6ccbb337c17102a50",
+   "lastmod": "2026-11-18"
+  },
+  "/product/virtualbox": {
+   "hash": "bb05730a59942f0caf1b4455444b2c30760cce6f7633914ad55866dbbd67b67f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/visionos": {
+   "hash": "2839b2feee587796a645419df8c81c00b9c79b0351dbe2bbfe9ce24ea30fd090",
+   "lastmod": "2026-11-18"
+  },
+  "/product/visual-cobol": {
+   "hash": "bcde4b864564d2882180eb511fe1f2f4cad6c1279bc52ff7bb798d36e9baf5e1",
+   "lastmod": "2026-11-18"
+  },
+  "/product/visual-studio": {
+   "hash": "9d9e8756c98520e7838225ebe2978a4d417bf2185566a20b773e09006ec8589d",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vitess": {
+   "hash": "74d8411e4003b840614bd3bba426646fdb2e3e03e078f42b9df1f7b89d0dace4",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vmware-cloud-foundation": {
+   "hash": "34e7a813302702e676b0cf6866c3c994d878ae06d784beaf3e48e0011b7665cf",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vmware-harbor-registry": {
+   "hash": "e477d02f111a5e4a8114ab3a136b3c6f99e6674b25cc3fee3b76cc69b0f0d1a9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vmware-srm": {
+   "hash": "0c58351f660939307a0418727908700bc909051063b54096f74888e7da942787",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vue": {
+   "hash": "515d375702fc533bc678ee8de88eff89a1acac90c4954bfac5d9a03c8bfbd65b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/vuetify": {
+   "hash": "1f16e1819fe2c072641ab14a2b97b80e10c937509e37e8fc42bd81577eac7eea",
+   "lastmod": "2026-11-18"
+  },
+  "/product/wagtail": {
+   "hash": "1d15660e9bcef447087e3052a53964afd5a20738d6ed37ebc2d1165366a89958",
+   "lastmod": "2026-11-18"
+  },
+  "/product/watchos": {
+   "hash": "57b702925b4e5c7238a979275d16b806315ce2ae5ead53aee4f335c9adf2313f",
+   "lastmod": "2026-11-18"
+  },
+  "/product/weakforced": {
+   "hash": "00755b63f33afd6dc4f4a5edf89fdcb7a0c2deb4f3ffb11a0c69f94e3967ce4a",
+   "lastmod": "2026-11-18"
+  },
+  "/product/weechat": {
+   "hash": "2bb4e00e761dd02ee82c42e079312b58e52a46c9121c2948d9ac5322064cbdc9",
+   "lastmod": "2026-11-18"
+  },
+  "/product/windows": {
+   "hash": "d448016c2ed77de2eae675ffffa649d952ea0893a23e7508a628c3a3ef84c4f0",
+   "lastmod": "2026-11-18"
+  },
+  "/product/windows-embedded": {
+   "hash": "735e53465da9024dc6f961124bbc891838b8c0b30f8eb4cd084f1d132bc17687",
+   "lastmod": "2026-11-18"
+  },
+  "/product/windows-nano-server": {
+   "hash": "4fea5232ed7307acdd65e752afa75b13dd9684c6d4602db5e39091d7ce2695ee",
+   "lastmod": "2026-11-18"
+  },
+  "/product/windows-powershell": {
+   "hash": "2a6003ac971c8fcd5de50767b94ed938aad5967f93a0cd1d35cc9f07decf4f45",
+   "lastmod": "2026-11-18"
+  },
+  "/product/windows-server": {
+   "hash": "af4800f143a230520bd83334ffddd6e5b71bf0fb7edb11128c0323a170a8bc8c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/windows-server-core": {
+   "hash": "9ebf0e361591a173fe05941f8a6a9bf1cb11aaedb47524de631bfeb5971fcdf8",
+   "lastmod": "2026-11-18"
+  },
+  "/product/wireshark": {
+   "hash": "2ff6eaa501c0568165d3a6a0fb1db0448b37bef7ef35751557320f167ed88bae",
+   "lastmod": "2026-11-18"
+  },
+  "/product/wordpress": {
+   "hash": "956e25240a1c0aa0dd33fa62860e0df1e4d267dbb0bd17de85faf48e5d275a84",
+   "lastmod": "2026-11-18"
+  },
+  "/product/xcp-ng": {
+   "hash": "a5aa7570ec3e8c5a8fe5a51eebcee6ea5d173e8df30d3c7b12fa4b387652760b",
+   "lastmod": "2026-11-18"
+  },
+  "/product/yarn": {
+   "hash": "6c85516829e8f46a095d775bfc30f3f44504e020d8d206b6e8e98ff221cb4643",
+   "lastmod": "2026-11-18"
+  },
+  "/product/yocto": {
+   "hash": "c5270c298903d3936f128590b905838761ff2501f66144bdafe72af97b61e7a2",
+   "lastmod": "2026-11-18"
+  },
+  "/product/youtrack": {
+   "hash": "3da74c0cd8624a2149ecf0d5af0ec7df06302af83c5ac398c4e03497de1efc37",
+   "lastmod": "2026-11-18"
+  },
+  "/product/zabbix": {
+   "hash": "24aa415853a868e6d8464dac07ea8571a37fadab9cf4720a7aba9e1bc57ff018",
+   "lastmod": "2026-11-18"
+  },
+  "/product/zentyal": {
+   "hash": "c9b9d22fb7f13c31b0b5d1515e2b7e8400ef389adc67aa7214edefc6131b5d9c",
+   "lastmod": "2026-11-18"
+  },
+  "/product/zerto": {
+   "hash": "c52e14fb4d3771395afe7188a2eb0eb809046f6e65f461c09ade76c2e32ede20",
+   "lastmod": "2026-11-18"
+  },
+  "/product/zookeeper": {
+   "hash": "fa91cf9e99d014a4b69f0252af6f12f91dfdb2c3288df27af931c6f88c1f8d1f",
+   "lastmod": "2026-11-18"
+  }
+ }
+}

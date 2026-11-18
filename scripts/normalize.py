@@ -98,6 +98,8 @@ def normalize_cycle(cycle, today):
         "support_end": support if isinstance(support, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", support) else None,
         "eol": eol_date,
         "eol_status": status,
+        # eol로 표시되어 있지만 원문에 종료일이 없는 사이클(eol: true, eolFrom: null)을 구분한다
+        "eol_date_published": bool(eol_date),
         "latest": cycle.get("latest"),
         "latest_release_date": cycle.get("latestReleaseDate") if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(cycle.get("latestReleaseDate") or "")) else None,
         "lts": bool(lts) if not isinstance(lts, str) else True,
@@ -378,6 +380,8 @@ def main():
 
     cycles_total = sum(len(p["cycles"]) for p in products)
     eol_cycles = sum(1 for p in products for c in p["cycles"] if c["eol_status"] == "eol")
+    eol_with_date = sum(1 for p in products for c in p["cycles"] if c["eol_status"] == "eol" and c.get("eol_date_published"))
+    eol_without_date = eol_cycles - eol_with_date
     upcoming = []
     for p in products:
         for c in p["cycles"]:
@@ -392,7 +396,7 @@ def main():
     upcoming.sort(key=lambda u: (u["eol"], u["name"]))
 
     doc = {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "generated_at": datetime.now(KST).isoformat(timespec="seconds"),
         "as_of": today.isoformat(),
         "timezone": "Asia/Seoul",
@@ -400,6 +404,8 @@ def main():
             "products": len(products),
             "cycles": cycles_total,
             "eol_cycles": eol_cycles,
+            "eol_with_date": eol_with_date,
+            "eol_without_date": eol_without_date,
             "upcoming_eol_365d": len(upcoming),
             "lambda_runtimes": len(lambda_runtimes),
             "announcements": len(announcements),
@@ -407,8 +413,10 @@ def main():
         "definitions": {
             "supported": "EOL date is in the future (and active support has not ended).",
             "security-only": "Active support has ended but the EOL date is still in the future.",
-            "eol": "EOL date has passed.",
-            "no-eol-date": "The upstream project publishes no EOL date for this cycle (eol=false in the source).",
+            "eol": "The cycle is end of life: the published EOL date has passed, or the upstream marks it end of life without a date.",
+            "eol-with-date": "Status eol and the upstream publishes an EOL date that has passed (counts.eol_with_date).",
+            "eol-no-date": "Status eol but the upstream publishes no EOL date for that cycle (eol=true, eolFrom=null in the source). Shown as 'End of life (date not published)'; no date is invented (counts.eol_without_date).",
+            "no-eol-date": "The upstream project publishes no EOL date and does not mark the cycle end of life (eol=false in the source).",
         },
         "sources": [
             {"id": "endoflife", "name": "endoflife.date API v1", "url": "https://endoflife.date/docs/api",
@@ -419,6 +427,8 @@ def main():
              "license": "Google Cloud documentation", "used_for": "deprecation notes"},
             {"id": "aws", "name": "AWS What's New feed", "url": "https://aws.amazon.com/new/",
              "license": "AWS", "used_for": "retirement announcements"},
+            {"id": "azure", "name": "Azure service updates feed", "url": "https://azure.microsoft.com/en-us/updates/",
+             "license": "Microsoft documentation", "used_for": "retirement announcements"},
             {"id": "github", "name": "GitHub releases feeds", "url": "https://github.com",
              "license": "respective projects", "used_for": "breaking changes in release notes"},
         ],
