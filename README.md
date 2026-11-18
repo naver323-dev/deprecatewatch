@@ -59,7 +59,7 @@ Status is computed from the snapshot date only, so the same build always yields 
 
 ## Automation
 
-`.github/workflows/update.yml` runs daily at 21:00 UTC (06:00 Asia/Seoul): fetch → normalize → build → check,
+`.github/workflows/update.yml` runs weekly, Mondays 21:00 UTC (Tuesdays 06:00 Asia/Seoul): fetch → normalize → build → check,
 then commits the refreshed snapshot. Cloudflare Pages deploys the `site/` directory from `main`.
 
 ## Editing
