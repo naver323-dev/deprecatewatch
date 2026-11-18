@@ -2,8 +2,8 @@ name: daily-eol-refresh
 
 on:
   schedule:
-    # 21:00 UTC = 06:00 Asia/Seoul
-    - cron: "0 21 * * *"
+    # 21:00 UTC Monday = 06:00 Asia/Seoul Tuesday (weekly)
+    - cron: "0 21 * * 1"
   workflow_dispatch:
 
 permissions:
