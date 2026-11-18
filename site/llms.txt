@@ -1,12 +1,12 @@
 # DeprecateWatch
 
-> End-of-life and deprecation dates for 489 SDKs, runtimes, frameworks, databases, operating systems and managed cloud services, with 9,417 tracked release cycles. Static snapshot generated 2026-11-18 (Asia/Seoul). Every date is copied from an upstream source; none is estimated.
+> End-of-life and deprecation dates for 489 SDKs, runtimes, frameworks, databases, operating systems and managed cloud services, with 9,418 tracked release cycles. Static snapshot generated 2026-11-18 (Asia/Seoul). Every date is copied from an upstream source; none is estimated.
 
-DeprecateWatch answers questions of the form "is <product> <version> end of life, and when". At this snapshot 7,480 tracked cycles are past their published EOL date and 176 reach EOL within 90 days.
+DeprecateWatch answers questions of the form "is <product> <version> end of life, and when". At this snapshot 7,481 tracked cycles are past their published EOL date and 176 reach EOL within 90 days.
 
 ## Machine-readable data
 
-- https://deprecatewatch.pages.dev/api/eol.json — full dataset (application/json, ~9,417 cycles). Top-level keys: schema_version, generated_at, as_of, counts, definitions, sources, products[], upcoming[], lambda_runtimes[], announcements[].
+- https://deprecatewatch.pages.dev/api/eol.json — full dataset (application/json, ~9,418 cycles). Top-level keys: schema_version, generated_at, as_of, counts, definitions, sources, products[], upcoming[], lambda_runtimes[], announcements[].
 - https://deprecatewatch.pages.dev/api/products.json — one row per product: slug, name, category, latest_cycle, current_eol, current_status, active_cycle, soonest_eol, eol_cycle_count.
 - https://deprecatewatch.pages.dev/api/upcoming.json — cycles with an EOL date in the next 365 days: slug, name, cycle, eol, days_left.
 - https://deprecatewatch.pages.dev/api/announcements.json — vendor deprecation/retirement notes: source, date, title, summary, url.
