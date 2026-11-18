@@ -1076,11 +1076,13 @@ def build_feed():
     """RSS 2.0 — 새 지원종료 공지 (구독·재배포용)."""
     items = []
     for a in ANNOUNCEMENTS[:50]:
+        # guid는 실행마다 같아야 한다(구독자가 같은 글을 새 글로 보지 않도록 해시 사용)
+        guid = hashlib.sha1((a["source"] + "|" + a["date"] + "|" + a["title"]).encode("utf-8")).hexdigest()[:12]
         items.append(
             "<item>"
             f"<title>{e(a['title'])}</title>"
             f"<link>{e(a['url'])}</link>"
-            f"<guid isPermaLink=\"false\">{e(a['source'])}-{e(a['date'])}-{e(abs(hash(a['title'])) % 10**10)}</guid>"
+            f"<guid isPermaLink=\"false\">{e(a['source'])}-{e(a['date'])}-{guid}</guid>"
             f"<pubDate>{e(a['date'])}</pubDate>"
             f"<description>{e(a['summary'][:400])}</description>"
             "</item>")
