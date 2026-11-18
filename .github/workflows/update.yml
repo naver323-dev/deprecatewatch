@@ -1,0 +1,42 @@
+name: daily-eol-refresh
+
+on:
+  schedule:
+    # 21:00 UTC = 06:00 Asia/Seoul
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eol-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch sources
+        run: REFRESH=1 python3 scripts/fetch.py
+      - name: Normalise
+        run: python3 scripts/normalize.py
+      - name: Build site
+        run: python3 scripts/build_site.py
+      - name: Verify
+        run: python3 scripts/check_site.py
+      - name: Commit refreshed snapshot
+        run: |
+          git config user.name "deprecatewatch-bot"
+          git config user.email "bot@deprecatewatch.pages.dev"
+          git add data/eol_normalized.json data/products_v1.json site
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "chore: refresh EOL snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi
