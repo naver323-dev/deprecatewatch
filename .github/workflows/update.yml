@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "deprecatewatch-bot"
           git config user.email "bot@deprecatewatch.pages.dev"
-          git add data/eol_normalized.json data/products_v1.json site
+          git add data/eol_normalized.json data/products_v1.json data/site_state.json site
           if git diff --staged --quiet; then
             echo "no changes"
           else
