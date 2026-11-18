@@ -228,6 +228,7 @@ gtag('config', '{e(GA)}', {{anonymize_ip: true}});
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
+<meta name="naver-site-verification" content="470217c490d30154503413b5668ed95c43b444c2">
 <link rel="canonical" href="{e(canonical)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{e(CONFIG['site_name'])}">
