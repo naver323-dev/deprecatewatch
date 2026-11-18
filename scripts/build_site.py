@@ -352,6 +352,39 @@ def answer_product(p):
     return sentence, rest
 
 
+def product_description(p, sentence):
+    """meta·og·JSON-LD용 3문장 설명(교차검수 P1-1).
+
+    1) 현재 사이클의 릴리스·EOL 2) 종료일이 지난 사이클 수 + 종료일 미공개 수
+    3) 지원 중인 최신 사이클 + 다음 데드라인. 모든 값은 데이터에서만 나온다.
+    """
+    parts = [sentence]
+    dated = [c for c in p["cycles"] if c["eol_status"] == "eol" and c.get("eol_date_published")]
+    undated = [c for c in p["cycles"] if c["eol_status"] == "eol" and not c.get("eol_date_published")]
+    if dated or undated:
+        line = f"{len(dated)} of its {p['cycle_count']} tracked cycles have passed their published end-of-life date"
+        if undated:
+            line += f" and {len(undated)} more are marked end of life with no published date"
+        parts.append(line + ".")
+    active = next((c for c in p["cycles"] if c["cycle"] == p["active_cycle"]), None)
+    tail = []
+    if active:
+        tail.append(
+            f"the newest cycle still supported is {active['cycle']}"
+            + (f" (latest {active['latest']})" if active.get("latest") and active["latest"] != active["cycle"] else "")
+            + (f", supported until {active['eol']}" if active.get("eol") else ""))
+    if p.get("soonest_eol"):
+        s = p["soonest_eol"]
+        when = days_phrase(s["days_left"])
+        tail.append(f"the next deadline is cycle {s['cycle']} on {s['eol']}" + (f" ({when})" if when else ""))
+    if tail:
+        line = tail[0][0].upper() + tail[0][1:]
+        if len(tail) > 1:
+            line += ", and " + tail[1]
+        parts.append(line + ".")
+    return " ".join(parts)
+
+
 def cycle_table(p, limit=None):
     rows = []
     cycles = p["cycles"] if not limit else p["cycles"][:limit]
@@ -620,7 +653,7 @@ def build_product(p):
         f'next EOL {e(x["soonest_eol"]["eol"])} ({e(x["soonest_eol"]["cycle"])})</li>' for x in same_cat
     )
     title = f"{p['name']} end-of-life and support dates (EOL {cur.get('eol') or 'not announced'})"
-    desc = f"{sentence} " + " ".join(rest) if rest else sentence
+    desc = product_description(p, sentence)
     jsonld = {
         "@context": "https://schema.org",
         "@graph": [
@@ -630,7 +663,7 @@ def build_product(p):
                 "@id": rel(f"/product/{p['slug']}.html") + "#webpage",
                 "url": rel(f"/product/{p['slug']}.html"),
                 "name": title,
-                "description": desc[:300],
+                "description": desc,
                 "isPartOf": {"@id": rel("/#website")},
                 "dateModified": mod_of(f"/product/{p['slug']}.html"),
                 "inLanguage": "en",
