@@ -40,7 +40,7 @@ date. This page explains exactly where each number comes from and what it does n
 
 <h2>Pipeline</h2>
 <ol>
-<li><strong>Collect.</strong> Every source below is fetched once a day by a scheduled job, without an API key, and the raw response is kept unchanged.</li>
+<li><strong>Collect.</strong> Every source below is fetched once a week (Tuesdays 06:00 KST) by a scheduled job, without an API key, and the raw response is kept unchanged.</li>
 <li><strong>Normalise.</strong> Cycles, support-end and EOL dates are copied into one schema. A status is computed by comparing the source date with the snapshot date: <code>supported</code>, <code>security-only</code>, <code>eol</code>, or <code>no-eol-date</code>.</li>
 <li><strong>Publish.</strong> The tables you see, the JSON API and <a href="/llms.txt">llms.txt</a> are generated from that one file, so the HTML, the JSON and the sitemap cannot drift apart.</li>
 <li><strong>Verify.</strong> A test suite checks the generated site before it is published: date formats, status/date consistency, JSON schema, duplicate pages, link targets and the FAQ text used in structured data.</li>

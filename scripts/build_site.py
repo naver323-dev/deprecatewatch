@@ -269,7 +269,7 @@ def cycle_table(p, limit=None):
 def faq_home():
     return [
         ("What is DeprecateWatch?",
-         f"DeprecateWatch is a static archive of end-of-life and deprecation dates for {len(PRODUCT_LIST)} SDKs, runtimes, frameworks, databases, operating systems and cloud services. It holds {DOC['counts']['cycles']:,} release cycles and is rebuilt every day from upstream sources. The snapshot on this page is dated {AS_OF}."),
+         f"DeprecateWatch is a static archive of end-of-life and deprecation dates for {len(PRODUCT_LIST)} SDKs, runtimes, frameworks, databases, operating systems and cloud services. It holds {DOC['counts']['cycles']:,} release cycles and is rebuilt every week, on Tuesdays at 06:00 KST, from upstream sources. The snapshot on this page is dated {AS_OF}."),
         ("Where do the dates come from?",
          "Cycle and support dates come from the endoflife.date API (MIT licensed). AWS Lambda runtime deprecation dates come from the AWS Lambda documentation table. Deprecation announcements come from the Google Cloud release notes feed, the Azure service updates feed, AWS What's New and GitHub release feeds. Every row links to the source it was read from, and no date is estimated or filled in by hand."),
         ("How many tracked versions are already end-of-life?",
@@ -279,7 +279,7 @@ def faq_home():
         ("Does DeprecateWatch recommend which version to upgrade to?",
          "No. Each product page shows two facts only: the newest cycle that is still supported for that product, and any replacement the upstream source itself states (for example a recommended model or successor). We do not rank vendors, score alternatives or issue migration advice."),
         ("How fresh is the data and how is it updated?",
-         f"The snapshot shown here was generated on {GENERATED} (Asia/Seoul). A scheduled job re-fetches every source daily and rebuilds these pages, so the as_of date in every table header matches the snapshot you are reading. Machine-readable copies are at /api/eol.json, /api/products.json, /api/upcoming.json and /api/announcements.json."),
+         f"The snapshot shown here was generated on {GENERATED} (Asia/Seoul). A scheduled job re-fetches every source weekly (Tuesdays 06:00 KST) and rebuilds these pages, so the as_of date in every table header matches the snapshot you are reading. Machine-readable copies are at /api/eol.json, /api/products.json, /api/upcoming.json and /api/announcements.json."),
     ]
 
 
@@ -417,7 +417,7 @@ with a dated value instead of a training-cutoff guess:</p>
                 "@type": "Dataset",
                 "@id": rel("/#dataset"),
                 "name": "DeprecateWatch end-of-life dataset",
-                "description": f"End-of-life and support-end dates for {len(PRODUCT_LIST)} software products and cloud runtimes, with {DOC['counts']['cycles']:,} tracked release cycles, rebuilt daily from upstream sources.",
+                "description": f"End-of-life and support-end dates for {len(PRODUCT_LIST)} software products and cloud runtimes, with {DOC['counts']['cycles']:,} tracked release cycles, rebuilt weekly (Tuesdays 06:00 KST) from upstream sources.",
                 "url": rel("/api/eol.json"),
                 "sameAs": rel("/"),
                 "license": "https://opensource.org/license/mit",
@@ -758,7 +758,7 @@ date. This page explains exactly where each number comes from and what it does n
 
 <h2>Pipeline</h2>
 <ol>
-<li><strong>Collect.</strong> Every source below is fetched once a day by a scheduled job, without an API key, and the raw response is kept unchanged.</li>
+<li><strong>Collect.</strong> Every source below is fetched once a week (Tuesdays 06:00 KST) by a scheduled job, without an API key, and the raw response is kept unchanged.</li>
 <li><strong>Normalise.</strong> Cycles, support-end and EOL dates are copied into one schema. A status is computed by comparing the source date with the snapshot date: <code>supported</code>, <code>security-only</code>, <code>eol</code>, or <code>no-eol-date</code>.</li>
 <li><strong>Publish.</strong> The tables you see, the JSON API and <a href="/llms.txt">llms.txt</a> are generated from that one file, so the HTML, the JSON and the sitemap cannot drift apart.</li>
 <li><strong>Verify.</strong> A test suite checks the generated site before it is published: date formats, status/date consistency, JSON schema, duplicate pages, link targets and the FAQ text used in structured data.</li>
